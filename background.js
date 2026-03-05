@@ -110,3 +110,8 @@ chrome.tabs.onRemoved.addListener(async (tabId, removeInfo) => {
     // beim Start des Browsers wäre denkbar, aber da die URLs nur kleine Strings und Zahlen sind,
     // ignorieren wir das erstmal (5MB Limit für local.storage ist sehr groß dafür).
 });
+
+// Listener für Klick auf das Extension-Icon
+chrome.action.onClicked.addListener((tab) => {
+    chrome.runtime.openOptionsPage();
+});
