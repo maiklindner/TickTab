@@ -1,0 +1,47 @@
+{
+    "extName": {
+        "message": "ColdTab - Auto Close"
+    },
+    "extDescription": {
+        "message": "Automatically closes inactive tabs to save memory and keep your browser clean. Survives browser restarts."
+    },
+    "optionsTitle": {
+        "message": "ColdTab Settings"
+    },
+    "optionsDescription": {
+        "message": "Automatically close inactive tabs after a specified time."
+    },
+    "optionsLabelTime": {
+        "message": "Close tabs after:"
+    },
+    "options1Day": {
+        "message": "1 Day"
+    },
+    "options3Days": {
+        "message": "3 Days"
+    },
+    "options1Week": {
+        "message": "1 Week"
+    },
+    "options2Weeks": {
+        "message": "2 Weeks"
+    },
+    "options1Month": {
+        "message": "1 Month"
+    },
+    "optionsCustom": {
+        "message": "Custom (Minutes)"
+    },
+    "optionsMinutes": {
+        "message": "Minutes"
+    },
+    "optionsSaveBtn": {
+        "message": "Save Settings"
+    },
+    "optionsSavedSuccess": {
+        "message": "Saved successfully!"
+    },
+    "optionsErrorRange": {
+        "message": "Please enter a value between 1 and 5,256,000."
+    }
+}
