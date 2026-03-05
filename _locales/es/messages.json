@@ -1,0 +1,47 @@
+{
+    "extName": {
+        "message": "ColdTab - Auto Close"
+    },
+    "extDescription": {
+        "message": "Cierra automáticamente las pestañas inactivas para ahorrar memoria y mantener limpio tu navegador. Sobrevive a reinicios del navegador."
+    },
+    "optionsTitle": {
+        "message": "Ajustes de ColdTab"
+    },
+    "optionsDescription": {
+        "message": "Cerrar automáticamente las pestañas inactivas después de un tiempo específico."
+    },
+    "optionsLabelTime": {
+        "message": "Cerrar pestañas después de:"
+    },
+    "options1Day": {
+        "message": "1 Día"
+    },
+    "options3Days": {
+        "message": "3 Días"
+    },
+    "options1Week": {
+        "message": "1 Semana"
+    },
+    "options2Weeks": {
+        "message": "2 Semanas"
+    },
+    "options1Month": {
+        "message": "1 Mes"
+    },
+    "optionsCustom": {
+        "message": "Personalizado (Minutos)"
+    },
+    "optionsMinutes": {
+        "message": "Minutos"
+    },
+    "optionsSaveBtn": {
+        "message": "Guardar Ajustes"
+    },
+    "optionsSavedSuccess": {
+        "message": "¡Guardado con éxito!"
+    },
+    "optionsErrorRange": {
+        "message": "Introduzca un valor entre 1 y 5.256.000."
+    }
+}

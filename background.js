@@ -68,13 +68,14 @@ chrome.alarms.onAlarm.addListener(async (alarm) => {
     }
 });
 
-async function checkAndCloseColdTabs() {
+async function checkAndCloseColdTabs(isManual = false) {
     const data = await chrome.storage.local.get(['expirationMinutes']);
     const expirationMinutes = data.expirationMinutes || DEFAULT_EXPIRATION_MINUTES;
     const expirationMs = expirationMinutes * 60 * 1000;
     const now = Date.now();
 
     const tabs = await chrome.tabs.query({});
+    let closedCount = 0;
 
     for (const tab of tabs) {
         // === AUSNAHMEN ===
@@ -100,7 +101,24 @@ async function checkAndCloseColdTabs() {
 
             // Aus Speicher entfernen
             chrome.storage.local.remove(key);
+            closedCount++;
         }
+    }
+
+    // Visuelles Feedback beim manuellen Klick
+    if (isManual) {
+        if (closedCount > 0) {
+            chrome.action.setBadgeText({ text: closedCount.toString() });
+            chrome.action.setBadgeBackgroundColor({ color: '#3498db' }); // Blau
+        } else {
+            chrome.action.setBadgeText({ text: '✓' });
+            chrome.action.setBadgeBackgroundColor({ color: '#2ecc71' }); // Grün
+        }
+
+        // Badge nach 2 Sekunden wieder entfernen
+        setTimeout(() => {
+            chrome.action.setBadgeText({ text: '' });
+        }, 2000);
     }
 }
 
@@ -111,7 +129,7 @@ chrome.tabs.onRemoved.addListener(async (tabId, removeInfo) => {
     // ignorieren wir das erstmal (5MB Limit für local.storage ist sehr groß dafür).
 });
 
-// Listener für Klick auf das Extension-Icon
-chrome.action.onClicked.addListener((tab) => {
-    chrome.runtime.openOptionsPage();
+// Listener für Klick auf das Extension-Icon (Manuelles Aufräumen)
+chrome.action.onClicked.addListener(async (tab) => {
+    await checkAndCloseColdTabs(true);
 });

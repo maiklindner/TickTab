@@ -1,0 +1,47 @@
+{
+    "extName": {
+        "message": "ColdTab - Auto Close"
+    },
+    "extDescription": {
+        "message": "Ferme automatiquement les onglets inactifs pour économiser de la mémoire et garder votre navigateur propre. Survit aux redémarrages."
+    },
+    "optionsTitle": {
+        "message": "Paramètres ColdTab"
+    },
+    "optionsDescription": {
+        "message": "Fermer automatiquement les onglets inactifs après une durée spécifiée."
+    },
+    "optionsLabelTime": {
+        "message": "Fermer les onglets après :"
+    },
+    "options1Day": {
+        "message": "1 Jour"
+    },
+    "options3Days": {
+        "message": "3 Jours"
+    },
+    "options1Week": {
+        "message": "1 Semaine"
+    },
+    "options2Weeks": {
+        "message": "2 Semaines"
+    },
+    "options1Month": {
+        "message": "1 Mois"
+    },
+    "optionsCustom": {
+        "message": "Personnalisé (Minutes)"
+    },
+    "optionsMinutes": {
+        "message": "Minutes"
+    },
+    "optionsSaveBtn": {
+        "message": "Sauvegarder les Paramètres"
+    },
+    "optionsSavedSuccess": {
+        "message": "Enregistré avec succès !"
+    },
+    "optionsErrorRange": {
+        "message": "Veuillez entrer une valeur entre 1 et 5 256 000."
+    }
+}
