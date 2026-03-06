@@ -7,27 +7,31 @@
   <style>
     /* 1. Default */
     :root {
-      --bg-color: #f7f8fa;
+      --bg-color: #f7f9fc;
       --card-bg-color: #ffffff;
-      --text-color: #2c3e50;
-      --label-color: #576574;
-      --border-color: #dfe4ea;
-      --primary-color: #3498db;
-      --primary-hover-color: #2980b9;
-      --success-color: #2ecc71;
-      --error-color: #e74c3c;
+      --text-color: #1f2937;
+      --label-color: #4b5563;
+      --border-color: #e5e7eb;
+      --primary-color: #3b82f6;
+      --primary-hover-color: #2563eb;
+      --success-color: #10b981;
+      --error-color: #ef4444;
+      --input-bg-color: #ffffff;
       --shadow-color: rgba(0, 0, 0, 0.05);
     }
 
     /* 2. Dark Mode */
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg-color: #363636;
-        --card-bg-color: #525252;
-        --text-color: #eeeeee;
-        --label-color: #c5c5c5;
-        --border-color: #707070;
-        --shadow-color: rgba(0, 0, 0, 0.2);
+        --bg-color: #111827;
+        --card-bg-color: #1f2937;
+        --text-color: #f9fafb;
+        --label-color: #9ca3af;
+        --border-color: #374151;
+        --input-bg-color: #1f2937;
+        --primary-color: #3b82f6;
+        --primary-hover-color: #60a5fa;
+        --shadow-color: rgba(0, 0, 0, 0.4);
       }
     }
 
@@ -37,39 +41,44 @@
       background-color: var(--bg-color);
       color: var(--text-color);
       margin: 0;
-      padding: 2em;
+      padding: 0;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
       min-height: 100vh;
-      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* 4. Konfigurator Container */
+    /* 4. Container */
     .container {
       background-color: var(--card-bg-color);
-      padding: 2em;
-      border-radius: 12px;
-      box-shadow: 0 8px 32px var(--shadow-color);
+      padding: 2.5em;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px var(--shadow-color);
       width: 100%;
-      max-width: 500px;
+      max-width: 520px;
       border: 1px solid var(--border-color);
+      box-sizing: border-box;
+      margin: 2em;
     }
 
-    /* 5. Styling für die Elemente */
+    /* 5. Elements */
     h1 {
-      font-size: 1.8em;
+      font-size: 2em;
       margin-top: 0;
       margin-bottom: 0.2em;
       color: var(--text-color);
       text-align: center;
+      font-weight: 700;
+      letter-spacing: -0.025em;
     }
 
     .description {
       text-align: center;
       color: var(--label-color);
-      font-size: 0.9em;
+      font-size: 1em;
       margin-bottom: 2em;
+      line-height: 1.5;
     }
 
     .form-group {
@@ -80,21 +89,23 @@
       display: block;
       font-size: 0.9em;
       color: var(--label-color);
-      margin-bottom: 0.5em;
-      font-weight: 500;
+      margin-bottom: 0.6em;
+      font-weight: 600;
+      letter-spacing: -0.01em;
     }
 
     select,
     input[type="number"] {
       width: 100%;
-      padding: 12px;
+      padding: 14px 16px;
       border: 1px solid var(--border-color);
-      border-radius: 8px;
-      background-color: var(--bg-color);
+      border-radius: 10px;
+      background-color: var(--input-bg-color);
       color: var(--text-color);
       font-size: 1em;
       box-sizing: border-box;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      transition: all 0.2s ease;
+      font-family: inherit;
     }
 
     select:focus,
@@ -108,38 +119,39 @@
       display: flex;
       gap: 12px;
       align-items: center;
-      margin-top: 12px;
+      margin-top: 14px;
     }
 
     button {
       width: 100%;
       padding: 14px;
-      margin-top: 1em;
+      margin-top: 1.5em;
       font-size: 1em;
-      font-weight: bold;
+      font-weight: 600;
       color: #ffffff;
       background-color: var(--primary-color);
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
-      transition: background-color 0.2s ease, transform 0.1s ease;
+      transition: all 0.2s ease;
+      letter-spacing: 0.01em;
     }
 
     button:hover {
       background-color: var(--primary-hover-color);
+      transform: translateY(-1px);
     }
 
     button:active {
-      transform: scale(0.98);
+      transform: translateY(0);
     }
 
-    /* 6. Styling für die Status-Nachricht */
     .status {
       margin-top: 1.5em;
       text-align: center;
       font-weight: 500;
       min-height: 1.2em;
-      /* Verhindert, dass das Layout springt */
+      transition: opacity 0.3s ease;
     }
   </style>
 </head>
