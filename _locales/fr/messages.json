@@ -1,12 +1,12 @@
 {
     "extName": {
-        "message": "ColdTab - Auto Close"
+        "message": "TickTab - Auto Close"
     },
     "extDescription": {
         "message": "Ferme automatiquement les onglets inactifs pour économiser de la mémoire et garder votre navigateur propre. Survit aux redémarrages."
     },
     "optionsTitle": {
-        "message": "Paramètres ColdTab"
+        "message": "Paramètres TickTab"
     },
     "optionsDescription": {
         "message": "Fermer automatiquement les onglets inactifs après une durée spécifiée."

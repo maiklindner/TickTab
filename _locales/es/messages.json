@@ -1,12 +1,12 @@
 {
     "extName": {
-        "message": "ColdTab - Auto Close"
+        "message": "TickTab - Auto Close"
     },
     "extDescription": {
         "message": "Cierra automáticamente las pestañas inactivas para ahorrar memoria y mantener limpio tu navegador. Sobrevive a reinicios del navegador."
     },
     "optionsTitle": {
-        "message": "Ajustes de ColdTab"
+        "message": "Ajustes de TickTab"
     },
     "optionsDescription": {
         "message": "Cerrar automáticamente las pestañas inactivas después de un tiempo específico."

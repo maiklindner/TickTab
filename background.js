@@ -1,4 +1,4 @@
-const ALARM_NAME = 'coldtab-checker';
+const ALARM_NAME = 'ticktab-checker';
 const DEFAULT_EXPIRATION_MINUTES = 7 * 24 * 60; // 1 week
 
 // Helfer zum Aktualisieren des Zeitstempels
@@ -64,11 +64,11 @@ chrome.runtime.onInstalled.addListener(() => {
 // Der Alarm löst periodisch den Schließvorgang aus
 chrome.alarms.onAlarm.addListener(async (alarm) => {
     if (alarm.name === ALARM_NAME) {
-        await checkAndCloseColdTabs();
+        await checkAndCloseTickTabs();
     }
 });
 
-async function checkAndCloseColdTabs(isManual = false) {
+async function checkAndCloseTickTabs(isManual = false) {
     const data = await chrome.storage.local.get(['expirationMinutes']);
     const expirationMinutes = data.expirationMinutes || DEFAULT_EXPIRATION_MINUTES;
     const expirationMs = expirationMinutes * 60 * 1000;
@@ -96,7 +96,7 @@ async function checkAndCloseColdTabs(isManual = false) {
         }
 
         if (now - lastActive > expirationMs) {
-            console.log(`[ColdTab] Schließe inaktiven Tab: ${tab.url} (Inaktiv für > ${expirationMinutes} Minuten)`);
+            console.log(`[TickTab] Schließe inaktiven Tab: ${tab.url} (Inaktiv für > ${expirationMinutes} Minuten)`);
             chrome.tabs.remove(tab.id).catch(e => console.error("Fehler beim Schließen des Tabs", e));
 
             // Aus Speicher entfernen
@@ -131,5 +131,5 @@ chrome.tabs.onRemoved.addListener(async (tabId, removeInfo) => {
 
 // Listener für Klick auf das Extension-Icon (Manuelles Aufräumen)
 chrome.action.onClicked.addListener(async (tab) => {
-    await checkAndCloseColdTabs(true);
+    await checkAndCloseTickTabs(true);
 });

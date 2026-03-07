@@ -1,12 +1,12 @@
 {
     "extName": {
-        "message": "ColdTab - Auto Close"
+        "message": "TickTab - Auto Close"
     },
     "extDescription": {
         "message": "Automatically closes inactive tabs to save memory and keep your browser clean. Survives browser restarts."
     },
     "optionsTitle": {
-        "message": "ColdTab Settings"
+        "message": "TickTab Settings"
     },
     "optionsDescription": {
         "message": "Automatically close inactive tabs after a specified time."

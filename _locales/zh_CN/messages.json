@@ -1,12 +1,12 @@
 {
     "extName": {
-        "message": "ColdTab - Auto Close"
+        "message": "TickTab - Auto Close"
     },
     "extDescription": {
         "message": "自动关闭非活动标签页，以节省内存并保持浏览器整洁。即便重启浏览器也能继续运行。"
     },
     "optionsTitle": {
-        "message": "ColdTab 设置"
+        "message": "TickTab 设置"
     },
     "optionsDescription": {
         "message": "在指定时间后自动关闭非活动标签页。"

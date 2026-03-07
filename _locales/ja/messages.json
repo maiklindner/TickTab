@@ -1,12 +1,12 @@
 {
     "extName": {
-        "message": "ColdTab - Auto Close"
+        "message": "TickTab - Auto Close"
     },
     "extDescription": {
         "message": "未使用のタブを自動で閉じてメモリを節約し、ブラウザをクリーンに保ちます。再起動後も機能し続けます。"
     },
     "optionsTitle": {
-        "message": "ColdTab の設定"
+        "message": "TickTab の設定"
     },
     "optionsDescription": {
         "message": "指定した時間が経過した後、非アクティブなタブを自動的に閉じます。"

@@ -1,10 +1,10 @@
 ### ## Deutsch
 
-**Datenschutzrichtlinie für die Erweiterung "ColdTab"**
+**Datenschutzrichtlinie für die Erweiterung "TickTab"**
 
 **Letzte Aktualisierung:** 05. März 2026
 
-Diese Datenschutzrichtlinie beschreibt, wie die Browser-Erweiterung "ColdTab" (im Folgenden "die Erweiterung" genannt), entwickelt von Maik Lindner, mit Daten umgeht.
+Diese Datenschutzrichtlinie beschreibt, wie die Browser-Erweiterung "TickTab" (im Folgenden "die Erweiterung" genannt), entwickelt von Maik Lindner, mit Daten umgeht.
 
 Der Schutz Ihrer Privatsphäre ist uns sehr wichtig. Die Erweiterung wurde nach dem Prinzip der Datensparsamkeit entwickelt. Es werden nur die Daten verarbeitet, die für die Kernfunktionalität der Erweiterung absolut notwendig sind.
 
@@ -48,11 +48,11 @@ Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, kontaktieren Sie bitte de
 
 ### ## English
 
-**Privacy Policy for the "ColdTab" Extension**
+**Privacy Policy for the "TickTab" Extension**
 
 **Last Updated:** March 05, 2026
 
-This Privacy Policy describes how the "ColdTab" browser extension (hereafter "the extension"), developed by Maik Lindner, handles data.
+This Privacy Policy describes how the "TickTab" browser extension (hereafter "the extension"), developed by Maik Lindner, handles data.
 
 Protecting your privacy is very important to us. The extension was developed following the principle of data minimization. Only the data absolutely necessary for the core functionality of the extension is processed.
 

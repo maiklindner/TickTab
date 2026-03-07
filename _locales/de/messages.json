@@ -1,12 +1,12 @@
 {
     "extName": {
-        "message": "ColdTab - Auto Close"
+        "message": "TickTab - Auto Close"
     },
     "extDescription": {
         "message": "Schließt automatisch inaktive Tabs, um Speicherplatz zu sparen und den Browser aufgeräumt zu halten. Überlebt Browser-Neustarts."
     },
     "optionsTitle": {
-        "message": "ColdTab Einstellungen"
+        "message": "TickTab Einstellungen"
     },
     "optionsDescription": {
         "message": "Inaktive Tabs nach einer festgelegten Zeit automatisch schließen."

@@ -1,7 +1,7 @@
-# ColdTab 🧊
+# TickTab 🧊
 
 A smart Google Chrome extension that automatically closes inactive tabs to save memory and keep your browser clean. 
-Unlike many other extensions, ColdTab survives browser restarts by carefully tracking URL activity in the local storage.
+Unlike many other extensions, TickTab survives browser restarts by carefully tracking URL activity in the local storage.
 
 ## Features
 - **Auto-Close Inactive Tabs**: Choose an expiration time ranging from 1 minute up to 10 years.
@@ -9,7 +9,7 @@ Unlike many other extensions, ColdTab survives browser restarts by carefully tra
   - Pinned tabs are ignored.
   - The currently active tab in any window is secure.
   - Tabs playing audio (e.g., Spotify, YouTube, Netflix) are ignored.
-- **Restart Resilient**: ColdTab uses `chrome.alarms` and persistent storage to reliably track tab inactivity even if you constantly close and reopen your browser.
+- **Restart Resilient**: TickTab uses `chrome.alarms` and persistent storage to reliably track tab inactivity even if you constantly close and reopen your browser.
 
 ## Installation
 1. Download or clone this repository.
@@ -19,7 +19,7 @@ Unlike many other extensions, ColdTab survives browser restarts by carefully tra
 5. Select the folder containing this repository.
 
 ## Usage & Settings
-Once installed, click on the **ColdTab** icon in the extensions toolbar to open the settings menu. You can customize the expiration time there.
+Once installed, click on the **TickTab** icon in the extensions toolbar to open the settings menu. You can customize the expiration time there.
 
 ## Privacy
-ColdTab operates 100% locally on your machine. It does not send any of your browsing data, URLs, or activity to any external server. 
+TickTab operates 100% locally on your machine. It does not send any of your browsing data, URLs, or activity to any external server. 
