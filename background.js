@@ -109,10 +109,12 @@ async function checkAndCloseTickTabs(isManual = false) {
     if (isManual) {
         if (closedCount > 0) {
             chrome.action.setBadgeText({ text: closedCount.toString() });
-            chrome.action.setBadgeBackgroundColor({ color: '#3498db' }); // Blue
         } else {
-            chrome.action.setBadgeText({ text: '✓' });
-            chrome.action.setBadgeBackgroundColor({ color: '#2ecc71' }); // Green
+            chrome.action.setBadgeText({ text: '0' });
+        }
+        chrome.action.setBadgeBackgroundColor({ color: '#333333' });
+        if (chrome.action.setBadgeTextColor) {
+            chrome.action.setBadgeTextColor({ color: '#eeeeee' });
         }
 
         // Remove badge after 2 seconds
