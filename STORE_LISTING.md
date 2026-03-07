@@ -75,14 +75,14 @@ TickTab - Fermer les onglets inactifs
 Ferme automatiquement les onglets inactifs pour économiser de la mémoire. Survit aux redémarrages de l'ordinateur !
 
 **Description :**
-TickTab est une extension intelligente qui ferme automatiquement les onglets que vous n'avez pas consultés depuis longtemps. Contrairement à beaucoup d'autres gestionnaires, TickTab survit aux redémarrages du navigateur !
+TickTab est une extension intelligente qui ferme automatiquement les onglets que tu n'as pas consultés depuis longtemps. Contrairement à beaucoup d'autres gestionnaires, TickTab survit aux redémarrages du navigateur !
 
 **Fonctionnalités :**
 * **Délais personnalisables :** Choisissez le moment où un onglet expire (de 1 jour à un an).
 * **Résiste aux redémarrages :** Les minuteries survivent aux crashs grâce au stockage local.
 * **Exceptions intelligentes :** Ne ferme jamais l'onglet actif, les onglets épinglés ou ceux qui lisent de l'audio/vidéo.
-* **Léger :** N'épuise pas votre batterie.
-* **La vie privée avant tout :** Fonctionne 100 % hors ligne sans transmettre vos données.
+* **Léger :** N'épuise pas ta batterie.
+* **La vie privée avant tout :** Fonctionne 100 % hors ligne sans transmettre tes données.
 
 ---
 
@@ -122,7 +122,7 @@ TickTab 是一个智能且注重隐私的扩展，它可以自动清理你很久
 * **重启不丢失计时:** 利用本地存储功能，即使浏览器崩溃也不会重置计时器。
 * **智能例外规则:** 永远不会关闭你当前正在查看的标签页、已固定的标签页或正在播放音频的网站（例如 Spotify 或 Bilibili/YouTube）。
 * **轻量化运行:** 使用浏览器原生接口，不耗费电量或 CPU。
-* **隐私至上:** 100% 离线工作，绝不上传您的浏览记录。
+* **隐私至上:** 100% 离线工作，绝不上传你的浏览记录。
 
 ---
 

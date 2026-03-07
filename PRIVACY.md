@@ -10,19 +10,19 @@ Der Schutz Ihrer Privatsphäre ist uns sehr wichtig. Die Erweiterung wurde nach 
 
 **1. Welche Daten werden erfasst?**
 
-Die Erweiterung erfasst und speichert **lokal auf Ihrem Gerät** die folgenden Informationen:
+Die Erweiterung erfasst und speichert **lokal auf deinem Gerät** die folgenden Informationen:
 
-*   **Zeitstempel der Tab-Aktivität:** Um zu berechnen, wann ein Tab geschlossen werden sollte, speichert die Erweiterung den Zeitpunkt, wann Sie einen Web-Tab das letzte Mal aufgerufen haben. Diese Zeitpunkte werden mit der URL des jeweiligen Tabs verknüpft (z.B. `tab_https://example.com/ = 1712435...`).
-*   **Ihre Einstellungen:** Die konfigurierte Schließungszeit (z.B. "1 Woche" oder "120 Minuten").
+*   **Zeitstempel der Tab-Aktivität:** Um zu berechnen, wann ein Tab geschlossen werden sollte, speichert die Erweiterung den Zeitpunkt, wann du einen Web-Tab das letzte Mal aufgerufen hast. Diese Zeitpunkte werden mit der URL des jeweiligen Tabs verknüpft (z.B. `tab_https://example.com/ = 1712435...`).
+*   **Deine Einstellungen:** Die konfigurierte Schließungszeit (z.B. "1 Woche" oder "120 Minuten").
 
 Die Erweiterung erfasst, sammelt oder verarbeitet **keine** persönlichen Daten, E-Mail-Adressen oder Identifikatoren. **Es werden niemals Browser-Verläufe, besuchte Webseiten oder Zeitstempel an externe Server gesendet.**
 
 **2. Wie und wo werden die Daten gespeichert?**
 
-Alle oben genannten Daten werden ausschließlich auf Ihrem eigenen Computer und in Ihrem Browser gespeichert.
+Alle oben genannten Daten werden ausschließlich auf deinem eigenen Computer und in deinem Browser gespeichert.
 
-*   Die **Zeitstempel (letzter Besuch eines Tabs)** und Ihre **Einstellungen** werden mit der `chrome.storage.local` API gespeichert.
-*   Diese Daten verbleiben ausschließlich lokal auf Ihrem Gerät und werden **nicht** in die Cloud synchronisiert. **Der Entwickler hat keinen Zugriff auf diese Daten.**
+*   Die **Zeitstempel (letzter Besuch eines Tabs)** und deine **Einstellungen** werden mit der `chrome.storage.local` API gespeichert.
+*   Diese Daten verbleiben ausschließlich lokal auf deinem Gerät und werden **nicht** in die Cloud synchronisiert. **Der Entwickler hat keinen Zugriff auf diese Daten.**
 
 **3. Datenübertragung**
 
@@ -33,7 +33,7 @@ Es findet **keine Datenübertragung** statt. Die Erweiterung arbeitet zu 100 % o
 Bei der Installation bittet die Erweiterung um folgende Berechtigungen:
 
 *   **`tabs`**: Wird benötigt, um die Dauer der Inaktivität zu überprüfen, festzustellen ob im Tab Ton abgespielt wird, und um veraltete Tabs schließlich schließen zu können.
-*   **`storage`**: Wird benötigt, um Ihre Einstellungen und die nötigen Zeitstempel (Wann wurde der Tab zuletzt angesehen?) lokal zu speichern.
+*   **`storage`**: Wird benötigt, um deine Einstellungen und die nötigen Zeitstempel (Wann wurde der Tab zuletzt angesehen?) lokal zu speichern.
 *   **`alarms`**: Wird benötigt, um die regelmäßige Überprüfung (im Intervall von ca. 15 Minuten) ressourcenschonend im Hintergrund des Browsers auszuführen.
 
 **5. Änderungen an dieser Richtlinie**
@@ -42,7 +42,7 @@ Diese Datenschutzrichtlinie kann zukünftig aktualisiert werden, um Änderungen 
 
 **6. Kontakt**
 
-Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, kontaktieren Sie bitte den Entwickler unter der im Store hinterlegten Mailadresse.
+Wenn du Fragen zu dieser Datenschutzrichtlinie hast, kontaktiere bitte den Entwickler unter der im Store hinterlegten Mailadresse.
 
 ***
 

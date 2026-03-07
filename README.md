@@ -1,6 +1,6 @@
 # TickTab 🧊
 
-A smart Google Chrome extension that automatically closes inactive tabs to save memory and keep your browser clean. 
+A smart browser extension that automatically closes inactive tabs to save memory and keep your browser clean. 
 Unlike many other extensions, TickTab survives browser restarts by carefully tracking URL activity in the local storage.
 
 ## Features
@@ -13,7 +13,7 @@ Unlike many other extensions, TickTab survives browser restarts by carefully tra
 
 ## Installation
 1. Download or clone this repository.
-2. Open Google Chrome and go to `chrome://extensions/`.
+2. Open your browser and go to the extensions page (e.g., `chrome://extensions/` or `edge://extensions/`).
 3. Enable **Developer mode** in the top right corner.
 4. Click on **Load unpacked**.
 5. Select the folder containing this repository.
