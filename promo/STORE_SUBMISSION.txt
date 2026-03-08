@@ -1,0 +1,30 @@
+# Privacy & Data Security (Chrome Web Store Disclosure)
+
+## Single Purpose: 
+TickTab helps you maintain a clean browser by automatically closing tabs that have been inactive for a user-defined period.
+
+## Permissions Disclosure:
+- tabs: 
+Required to monitor tab activity, check for audio playback, and programmatically close inactive tabs.
+
+- storage: 
+Required to save your inactivity timeout settings and tab activity timestamps locally on your machine.
+
+- alarms: 
+Required to schedule efficient periodic checks for inactive tabs in the browser background.
+
+Remote Code: 
+None. This extension does not use or fetch any remote code.
+
+User Data: 
+No personal data, browsing history, or identifiers are collected, stored, or transmitted.
+
+Privacy Policy: 
+https://github.com/maiklindner/TickTab/blob/main/PRIVACY.md
+
+## Test Instructions:
+1. Open the options page and set a "Custom" timeout to 1 minute.
+2. Ensure the Master Toggle is ON and save settings.
+3. Open a separate website in a new tab and focus on it.
+4. Switch to a different tab or keep the browser in background.
+5. After 1 minute of inactivity, the extension will automatically close the background tab to save memory. (Active and pinned tabs are ignored).
