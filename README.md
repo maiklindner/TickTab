@@ -1,4 +1,11 @@
-# TickTab 🧊
+![Icon](icons/logo48.png) 
+
+# TickTab
+
+[![Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-Add--on-blue?logo=google-chrome)]()
+[![Microsoft Edge Add-ons](https://img.shields.io/badge/Microsoft%20Edge-Add--on-blue?logo=microsoft-edge)]()
+[![Manifest V3](https://img.shields.io/badge/Manifest-V3-orange)]()
+[![Privacy](https://img.shields.io/badge/Privacy-Friendly-green)](PRIVACY.md)
 
 A smart browser extension that automatically closes inactive tabs to save memory and keep your browser clean. 
 Unlike many other extensions, TickTab survives browser restarts by carefully tracking URL activity in the local storage.
@@ -13,11 +20,20 @@ Unlike many other extensions, TickTab survives browser restarts by carefully tra
 - **Restart Resilient**: TickTab uses `chrome.alarms` and persistent storage to reliably track tab inactivity even if you constantly close and reopen your browser.
 
 ## Installation
-1. Download or clone this repository.
-2. Open your browser and go to the extensions page (e.g., `chrome://extensions/` or `edge://extensions/`).
+
+You have three options to install TickTab:
+
+**1. Chrome Web Store**
+*Link coming soon*
+
+**2. Microsoft Edge Add-ons**
+*Link coming soon*
+
+**3. Manual Installation (Unpacked)**
+1. Clone this repository or download the ZIP and extract it.
+2. Open Chrome/Edge and navigate to `chrome://extensions` or `edge://extensions`.
 3. Enable **Developer mode** in the top right corner.
-4. Click on **Load unpacked**.
-5. Select the folder containing this repository.
+4. Click **Load unpacked** and select the extension folder.
 
 ## Usage & Settings
 Once installed, click on the **TickTab** icon in the extensions toolbar to open the settings menu. You can customize the expiration time there.
