@@ -17,8 +17,8 @@ TickTab is a smart and privacy-focused extension that automatically closes tabs 
 
 Is your browser constantly cluttered with dozens of tabs you promised yourself you'd read later? TickTab solves this by silently cleaning up forgotten tabs after a customizable amount of time.
 
-Features:
-- Customizable Timeouts: Choose when a tab should expire – anything from 1 day up to a whole year.
+- Customizable Timeouts: Choose when a tab should expire using standard presets or precise custom units (Minutes, Hours, Days, Weeks).
+- Master Toggle: Quickly pause the extension at any time via the options menu.
 - Restart Resilient: TickTab carefully tracks tab activity locally, so timers survive restarts and crashes.
 - Smart Exceptions: Never closes the active tab, pinned tabs, or tabs playing audio/video.
 - Lightweight: Uses native browser APIs without draining your battery or hogging your CPU.
@@ -40,8 +40,8 @@ TickTab ist eine intelligente und datenschutzfreundliche Erweiterung, die Tabs, 
 
 Ist dein Browser ständig überfüllt mit Dutzenden von Tabs, die du "später" lesen wolltest? TickTab löst dieses Problem, indem es vergessene Tabs nach einer einstellbaren Zeit lautlos aufräumt.
 
-Funktionen:
-- Anpassbare Zeiten: Wähle selbst, wann ein Tab verfallen soll – von 1 Tag bis zu einem ganzen Jahr.
+- Anpassbare Zeiten: Wähle selbst über Standardwerte oder genaue Zeiteinheiten (Minuten, Stunden, Tage, Wochen) ganz frei, wann ein Tab verfallen soll.
+- Master Toggle: Pausiere die Erweiterung jederzeit direkt in den Einstellungen.
 - Überlebt Neustarts: TickTab speichert die Tab-Aktivität lokal, sodass Timer auch nach einem Neustart weiterlaufen.
 - Intelligente Ausnahmen: Der aktuelle, angepinnte oder Audio/Video abspielende Tabs werden nie geschlossen.
 - Ressourcenschonend: Nutzt native Browser-APIs, ohne den Akku oder die CPU zu belasten.
@@ -61,8 +61,8 @@ Cierra automáticamente las pestañas inactivas para ahorrar memoria. ¡Lo sufic
 Description:
 TickTab es una extensión inteligente y centrada en la privacidad que cierra automáticamente aquellas pestañas que no has mirado en mucho tiempo. A diferencia de otros gestores, ¡TickTab sobrevive a los reinicios del navegador y del ordenador!
 
-Características:
-- Tiempos personalizables: Elige cuándo debe caducar una pestaña, desde 1 día hasta un año.
+- Tiempos personalizables: Elige cuándo debe caducar una pestaña usando ajustes estándar o unidades personalizadas precisas (minutos, horas, días, semanas).
+- Interruptor principal: Pausa la extensión rápidamente en cualquier momento a través del menú de opciones.
 - Resistente a reinicios: Los temporizadores se guardan localmente y sobreviven a bloqueos del navegador.
 - Excepciones inteligentes: Nunca cierra la pestaña activa, fijadas o las que reproducen audio/vídeo.
 - Ligero: Utiliza APIs nativas para no agotar la batería ni la CPU.
@@ -82,8 +82,8 @@ Ferme automatiquement les onglets inactifs pour économiser de la mémoire. Surv
 Description:
 TickTab est une extension intelligente qui ferme automatiquement les onglets que tu n'as pas consultés depuis longtemps. Contrairement à beaucoup d'autres gestionnaires, TickTab survit aux redémarrages du navigateur !
 
-Fonctionnalités :
-- Délais personnalisables : Choisissez le moment où un onglet expire (de 1 jour à un an).
+- Délais personnalisables : Choisissez le moment où un onglet expire en utilisant des préréglages standard ou des unités personnalisées (minutes, heures, jours, semaines).
+- Interrupteur principal : Mettez rapidement l'extension en pause à tout moment depuis le menu des options.
 - Résiste aux redémarrages : Les minuteries survivent aux crashs grâce au stockage local.
 - Exceptions intelligentes : Ne ferme jamais l'onglet actif, les onglets épinglés ou ceux qui lisent de l'audio.
 - Léger : N'épuise pas ta batterie et n'utilise pas ta CPU inutilement.
@@ -103,8 +103,8 @@ Fecha automaticamente abas inativas para economizar memória e manter o navegado
 Description:
 TickTab é uma extensão inteligente que fecha automaticamente abas que você não acessou por um tempo. Ao contrário de outras extensões, ele sobrevive à reinicialização do navegador e do PC!
 
-Recursos:
-- Tempos personalizáveis: Escolha quando a aba deve expirar, de 1 dia a 1 ano.
+- Tempos personalizáveis: Escolha quando a aba deve expirar usando predefinições padrão ou unidades personalizadas precisas (minutos, horas, dias, semanas).
+- Botão Mestre: Pause rapidamente a extensão a qualquer momento pelo menu de opções.
 - Resistente a reinicializações: Os cronômetros são salvos localmente e não são perdidos.
 - Exceções inteligentes: Nunca fecha a aba ativa atual, abas fixadas ou as que reproduzem áudio.
 - Leve: Não consome a bateria nem a CPU usando APIs nativas.
@@ -124,8 +124,8 @@ Short Description (max 132 chars):
 Description:
 TickTab 是一个智能且注重隐私的扩展，它可以自动清理你很久没有查看的标签页。与其他标签页管理器不同的是，TickTab 能够在浏览器甚至电脑重启后继续运行！
 
-功能特点:
-- 自定义时间间隔: 自由设定标签页过期的时间（从 1 天到 1 年）。
+- 自定义时间间隔: 使用标准预设或精确自定义单位（分钟、小时、天、周），可自由设定标签页过期时间。
+- 主开关: 可随时通过选项菜单快速暂停扩展功能。
 - 重启不丢失计时: 利用本地存储功能，即使浏览器崩溃也不会重置计时器。
 - 智能例外规则: 永远不会关闭你当前正在查看的标签页、已固定的标签页或正在播放音频的网站。
 - 轻量化运行: 使用原生接口，不耗费电量或 CPU。
@@ -145,8 +145,8 @@ Short Description (max 132 chars):
 Description:
 TickTabは、しばらく見ていないタブを自動的に閉じる、スマートでプライバシーを重視した拡張機能です。他のタブ管理機能とは異なり、ブラウザーやPCを再起動しても機能し続けます。
 
-機能の特徴:
-- カスタム時間: タブが閉じるまでの時間を1日から最大1年まで設定できます。
+- カスタム時間: タブが閉じるまでの時間を標準のプリセット、または دقیق なカスタム単位（分、時間、日、週）を使用して自由に設定できます。
+- マスタートグル: オプションメニューからいつでも拡張機能を一時停止できます。
 - 再起動に対応: 終了タイマーはローカルストレージに保存されるため、クラッシュしても安心です。
 - 特定のタブを保護: 現在開いているタブ、ピン留めされたタブ、または音声を再生しているタブは決して閉じられません。
 - 軽量: ネイティブAPIを使用し、バッテリーやCPUを消耗しません。

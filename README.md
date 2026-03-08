@@ -4,7 +4,8 @@ A smart browser extension that automatically closes inactive tabs to save memory
 Unlike many other extensions, TickTab survives browser restarts by carefully tracking URL activity in the local storage.
 
 ## Features
-- **Auto-Close Inactive Tabs**: Choose an expiration time ranging from 1 minute up to 10 years.
+- **Auto-Close Inactive Tabs**: Choose an expiration time ranging from 1 minute up to several weeks, using standard presets or precise custom units (Minutes, Hours, Days, Weeks).
+- **Master Toggle**: Easily disable or enable the extension at any time via the options page.
 - **Smart Exceptions**:
   - Pinned tabs are ignored.
   - The currently active tab in any window is secure.
