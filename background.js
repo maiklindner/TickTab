@@ -69,7 +69,9 @@ chrome.alarms.onAlarm.addListener(async (alarm) => {
 });
 
 async function checkAndCloseTickTabs(isManual = false) {
-    const data = await chrome.storage.local.get(['expirationMinutes']);
+    const data = await chrome.storage.local.get(['expirationMinutes', 'enabled']);
+    if (data.enabled === false) return; // Exit early if globally disabled
+
     const expirationMinutes = data.expirationMinutes || DEFAULT_EXPIRATION_MINUTES;
     const expirationMs = expirationMinutes * 60 * 1000;
     const now = Date.now();

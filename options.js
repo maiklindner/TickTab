@@ -38,11 +38,17 @@ function localizeHtmlPage() {
     document.getElementById('opt1Day').textContent = getMessage("options1Day");
     document.getElementById('opt3Days').textContent = getMessage("options3Days");
     document.getElementById('opt1Week').textContent = getMessage("options1Week");
-    document.getElementById('opt2Weeks').textContent = getMessage("options2Weeks");
     document.getElementById('opt1Month').textContent = getMessage("options1Month");
     document.getElementById('optCustom').textContent = getMessage("optionsCustom");
-    document.getElementById('labelMinutes').textContent = getMessage("optionsMinutes");
-    document.getElementById('saveBtn').textContent = getMessage("optionsSaveBtn");
+    document.getElementById('optUnitMinutes').textContent = getMessage("optionsUnitMinutes") || "Minutes";
+    document.getElementById('optUnitHours').textContent = getMessage("optionsUnitHours") || "Hours";
+    document.getElementById('optUnitDays').textContent = getMessage("optionsUnitDays") || "Days";
+    document.getElementById('optUnitWeeks').textContent = getMessage("optionsUnitWeeks") || "Weeks";
+    if (document.getElementById('labelMinutes')) {
+      document.getElementById('labelMinutes').textContent = getMessage("optionsMinutes");
+    }
+    document.getElementById('enableTitle').textContent = getMessage("optionsEnableTitle") || "Enable TickTab";
+    document.getElementById('enableDesc').textContent = getMessage("optionsEnableDesc") || "Toggle whether inactive tabs should be closed automatically.";
     document.title = getMessage("extName");
 }
 
@@ -58,11 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeSelect = document.getElementById('timeSelect');
     const customInputWrapper = document.getElementById('customInputWrapper');
     const customMinutesInput = document.getElementById('customMinutes');
-    const saveBtn = document.getElementById('saveBtn');
-    const statusMessage = document.getElementById('statusMessage');
+    const unitSelect = document.getElementById('unitSelect');
+    const masterToggle = document.getElementById('masterToggle');
 
     // Load saved settings
-    chrome.storage.local.get(['expirationMinutes'], (result) => {
+    chrome.storage.local.get(['expirationMinutes', 'enabled'], (result) => {
+        masterToggle.checked = result.enabled !== false; // default true
         const savedMinutes = result.expirationMinutes || 10080; // default 1 week
 
         // Check if it matches a preset
@@ -74,7 +81,24 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             timeSelect.value = 'custom';
             customInputWrapper.style.display = 'flex';
-            customMinutesInput.value = savedMinutes;
+            
+            // Reverse engineer the unit
+            let val = savedMinutes;
+            let unit = '1';
+            
+            if (val % 10080 === 0) {
+                unit = '10080';
+                val = val / 10080;
+            } else if (val % 1440 === 0) {
+                unit = '1440';
+                val = val / 1440;
+            } else if (val % 60 === 0) {
+                unit = '60';
+                val = val / 60;
+            }
+            
+            unitSelect.value = unit;
+            customMinutesInput.value = val;
         }
     });
 
@@ -83,34 +107,36 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.value === 'custom') {
             customInputWrapper.style.display = 'flex';
             if (!customMinutesInput.value) {
-                customMinutesInput.value = "10080"; // Default pre-fill
+                customMinutesInput.value = "60"; // Default pre-fill to 60 as requested
             }
         } else {
             customInputWrapper.style.display = 'none';
         }
+        saveSettings(); // Automatically save as soon as selection changes
     });
 
-    // Save settings
-    saveBtn.addEventListener('click', () => {
+    masterToggle.addEventListener('change', () => {
+        chrome.storage.local.set({ enabled: masterToggle.checked });
+    });
+
+    function saveSettings() {
         let minutesToSave;
 
         if (timeSelect.value === 'custom') {
             const val = parseInt(customMinutesInput.value, 10);
-            if (isNaN(val) || val < 1 || val > 5256000) { // Max 10 years in minutes
-                statusMessage.textContent = getMessage("optionsErrorRange");
-                statusMessage.style.color = "#ef4444"; // Red
-                setTimeout(() => statusMessage.textContent = '', 3000);
-                return;
+            const multiplier = parseInt(unitSelect.value, 10);
+            if (isNaN(val) || val < 1 || val > 100000) {
+                return; // Silently fail on invalid input during auto-save
             }
-            minutesToSave = val;
+            minutesToSave = val * multiplier;
         } else {
             minutesToSave = parseInt(timeSelect.value, 10);
         }
 
-        chrome.storage.local.set({ expirationMinutes: minutesToSave }, () => {
-            statusMessage.textContent = getMessage("optionsSavedSuccess");
-            statusMessage.style.color = "#10b981"; // Green
-            setTimeout(() => statusMessage.textContent = '', 2000);
-        });
-    });
+        chrome.storage.local.set({ expirationMinutes: minutesToSave });
+    }
+
+    // Auto-save on input typing for custom value
+    customMinutesInput.addEventListener('input', saveSettings);
+    unitSelect.addEventListener('change', saveSettings);
 });

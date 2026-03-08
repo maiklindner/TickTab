@@ -1,47 +1,65 @@
 {
-    "extName": {
-        "message": "TickTab - Auto Close"
-    },
-    "extDescription": {
-        "message": "未使用のタブを自動で閉じてメモリを節約し、ブラウザをクリーンに保ちます。再起動後も機能し続けます。"
-    },
-    "optionsTitle": {
-        "message": "TickTab の設定"
-    },
-    "optionsDescription": {
-        "message": "指定した時間が経過した後、非アクティブなタブを自動的に閉じます。"
-    },
-    "optionsLabelTime": {
-        "message": "タブを閉じるまでの時間:"
-    },
-    "options1Day": {
-        "message": "1 日"
-    },
-    "options3Days": {
-        "message": "3 日"
-    },
-    "options1Week": {
-        "message": "1 週間"
-    },
-    "options2Weeks": {
-        "message": "2 週間"
-    },
-    "options1Month": {
-        "message": "1 ヶ月"
-    },
-    "optionsCustom": {
-        "message": "カスタム (分数)"
-    },
-    "optionsMinutes": {
-        "message": "分"
-    },
-    "optionsSaveBtn": {
-        "message": "設定を保存"
-    },
-    "optionsSavedSuccess": {
-        "message": "保存しました！"
-    },
-    "optionsErrorRange": {
-        "message": "1 から 5,256,000 の間の値を入力してください。"
-    }
+  "extName": {
+    "message": "TickTab - Auto Close"
+  },
+  "extDescription": {
+    "message": "未使用のタブを自動で閉じてメモリを節約し、ブラウザをクリーンに保ちます。再起動後も機能し続けます。"
+  },
+  "optionsTitle": {
+    "message": "TickTab"
+  },
+  "optionsDescription": {
+    "message": "指定した時間が経過した後、非アクティブなタブを自動的に閉じます。"
+  },
+  "optionsLabelTime": {
+    "message": "タブを閉じるまでの時間:"
+  },
+  "options1Day": {
+    "message": "1 日"
+  },
+  "options3Days": {
+    "message": "3 日"
+  },
+  "options1Week": {
+    "message": "1 週間"
+  },
+  "options2Weeks": {
+    "message": "2 週間"
+  },
+  "options1Month": {
+    "message": "1 ヶ月"
+  },
+  "optionsCustom": {
+    "message": "カスタム"
+  },
+  "optionsMinutes": {
+    "message": "分"
+  },
+  "optionsSaveBtn": {
+    "message": "設定を保存"
+  },
+  "optionsSavedSuccess": {
+    "message": "保存しました！"
+  },
+  "optionsErrorRange": {
+    "message": "1 から 5,256,000 の間の値を入力してください。"
+  },
+  "optionsEnableTitle": {
+    "message": "TickTabを有効にする"
+  },
+  "optionsEnableDesc": {
+    "message": "非アクティブなタブを自動的に閉じるかどうかを切り替えます。"
+  },
+  "optionsUnitMinutes": {
+    "message": "分"
+  },
+  "optionsUnitHours": {
+    "message": "時間"
+  },
+  "optionsUnitDays": {
+    "message": "日"
+  },
+  "optionsUnitWeeks": {
+    "message": "週間"
+  }
 }

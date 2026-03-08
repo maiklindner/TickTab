@@ -1,47 +1,65 @@
 {
-    "extName": {
-        "message": "TickTab - Auto Close"
-    },
-    "extDescription": {
-        "message": "Fecha automaticamente guias inativas para economizar memória e manter seu navegador limpo. Sobrevive a reinicializações."
-    },
-    "optionsTitle": {
-        "message": "Configurações do TickTab"
-    },
-    "optionsDescription": {
-        "message": "Fechar abas inativas automaticamente após um tempo específico."
-    },
-    "optionsLabelTime": {
-        "message": "Fechar abas após:"
-    },
-    "options1Day": {
-        "message": "1 Dia"
-    },
-    "options3Days": {
-        "message": "3 Dias"
-    },
-    "options1Week": {
-        "message": "1 Semana"
-    },
-    "options2Weeks": {
-        "message": "2 Semanas"
-    },
-    "options1Month": {
-        "message": "1 Mês"
-    },
-    "optionsCustom": {
-        "message": "Personalizado (Minutos)"
-    },
-    "optionsMinutes": {
-        "message": "Minutos"
-    },
-    "optionsSaveBtn": {
-        "message": "Salvar Configurações"
-    },
-    "optionsSavedSuccess": {
-        "message": "Salvo com sucesso!"
-    },
-    "optionsErrorRange": {
-        "message": "Insira um valor entre 1 e 5.256.000."
-    }
+  "extName": {
+    "message": "TickTab - Auto Close"
+  },
+  "extDescription": {
+    "message": "Fecha automaticamente guias inativas para economizar memória e manter seu navegador limpo. Sobrevive a reinicializações."
+  },
+  "optionsTitle": {
+    "message": "TickTab"
+  },
+  "optionsDescription": {
+    "message": "Fechar abas inativas automaticamente após um tempo específico."
+  },
+  "optionsLabelTime": {
+    "message": "Fechar abas após:"
+  },
+  "options1Day": {
+    "message": "1 Dia"
+  },
+  "options3Days": {
+    "message": "3 Dias"
+  },
+  "options1Week": {
+    "message": "1 Semana"
+  },
+  "options2Weeks": {
+    "message": "2 Semanas"
+  },
+  "options1Month": {
+    "message": "1 Mês"
+  },
+  "optionsCustom": {
+    "message": "Personalizado"
+  },
+  "optionsMinutes": {
+    "message": "Minutos"
+  },
+  "optionsSaveBtn": {
+    "message": "Salvar Configurações"
+  },
+  "optionsSavedSuccess": {
+    "message": "Salvo com sucesso!"
+  },
+  "optionsErrorRange": {
+    "message": "Insira um valor entre 1 e 5.256.000."
+  },
+  "optionsEnableTitle": {
+    "message": "Ativar TickTab"
+  },
+  "optionsEnableDesc": {
+    "message": "Ative ou desative o fechamento automático de abas inativas."
+  },
+  "optionsUnitMinutes": {
+    "message": "Minutos"
+  },
+  "optionsUnitHours": {
+    "message": "Horas"
+  },
+  "optionsUnitDays": {
+    "message": "Dias"
+  },
+  "optionsUnitWeeks": {
+    "message": "Semanas"
+  }
 }

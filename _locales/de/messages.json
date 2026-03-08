@@ -1,47 +1,65 @@
 {
-    "extName": {
-        "message": "TickTab - Auto Close"
-    },
-    "extDescription": {
-        "message": "Schließt automatisch inaktive Tabs, um Speicherplatz zu sparen und den Browser aufgeräumt zu halten. Überlebt Browser-Neustarts."
-    },
-    "optionsTitle": {
-        "message": "TickTab Einstellungen"
-    },
-    "optionsDescription": {
-        "message": "Inaktive Tabs nach einer festgelegten Zeit automatisch schließen."
-    },
-    "optionsLabelTime": {
-        "message": "Tabs schließen nach:"
-    },
-    "options1Day": {
-        "message": "1 Tag"
-    },
-    "options3Days": {
-        "message": "3 Tagen"
-    },
-    "options1Week": {
-        "message": "1 Woche"
-    },
-    "options2Weeks": {
-        "message": "2 Wochen"
-    },
-    "options1Month": {
-        "message": "1 Monat"
-    },
-    "optionsCustom": {
-        "message": "Benutzerdefiniert (Minuten)"
-    },
-    "optionsMinutes": {
-        "message": "Minuten"
-    },
-    "optionsSaveBtn": {
-        "message": "Einstellungen speichern"
-    },
-    "optionsSavedSuccess": {
-        "message": "Erfolgreich gespeichert!"
-    },
-    "optionsErrorRange": {
-        "message": "Bitte einen Wert zwischen 1 und 5.256.000 (10 Jahre) eingeben."
-    }
+  "extName": {
+    "message": "TickTab - Auto Close"
+  },
+  "extDescription": {
+    "message": "Schließt automatisch inaktive Tabs, um Speicherplatz zu sparen und den Browser aufgeräumt zu halten. Überlebt Browser-Neustarts."
+  },
+  "optionsTitle": {
+    "message": "TickTab"
+  },
+  "optionsDescription": {
+    "message": "Inaktive Tabs nach einer festgelegten Zeit automatisch schließen."
+  },
+  "optionsLabelTime": {
+    "message": "Tabs schließen nach:"
+  },
+  "options1Day": {
+    "message": "1 Tag"
+  },
+  "options3Days": {
+    "message": "3 Tagen"
+  },
+  "options1Week": {
+    "message": "1 Woche"
+  },
+  "options2Weeks": {
+    "message": "2 Wochen"
+  },
+  "options1Month": {
+    "message": "1 Monat"
+  },
+  "optionsCustom": {
+    "message": "Benutzerdefiniert"
+  },
+  "optionsMinutes": {
+    "message": "Minuten"
+  },
+  "optionsSaveBtn": {
+    "message": "Einstellungen speichern"
+  },
+  "optionsSavedSuccess": {
+    "message": "Erfolgreich gespeichert!"
+  },
+  "optionsErrorRange": {
+    "message": "Bitte einen Wert zwischen 1 und 5.256.000 (10 Jahre) eingeben."
+  },
+  "optionsEnableTitle": {
+    "message": "TickTab aktivieren"
+  },
+  "optionsEnableDesc": {
+    "message": "Automatisches Schließen von inaktiven Tabs ein-/ausschalten."
+  },
+  "optionsUnitMinutes": {
+    "message": "Minuten"
+  },
+  "optionsUnitHours": {
+    "message": "Stunden"
+  },
+  "optionsUnitDays": {
+    "message": "Tage"
+  },
+  "optionsUnitWeeks": {
+    "message": "Wochen"
+  }
 }

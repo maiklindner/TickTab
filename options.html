@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>TickTab Settings</title>
+  <title>TickTab</title>
   <style>
     /* 1. Default */
     :root {
@@ -56,29 +56,33 @@
       border-radius: 16px;
       box-shadow: 0 10px 40px var(--shadow-color);
       width: 100%;
-      max-width: 520px;
+      max-width: 800px;
       border: 1px solid var(--border-color);
       box-sizing: border-box;
       margin: 2em;
     }
 
-    /* 5. Elements */
+    /* Header matching PagePalette */
+    header {
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 16px;
+    }
+
     h1 {
-      font-size: 2em;
+      font-size: 24px;
       margin-top: 0;
-      margin-bottom: 0.2em;
+      margin-bottom: 8px;
       color: var(--text-color);
-      text-align: center;
       font-weight: 700;
       letter-spacing: -0.025em;
     }
 
     .description {
-      text-align: center;
       color: var(--label-color);
-      font-size: 1em;
-      margin-bottom: 2em;
-      line-height: 1.5;
+      margin-top: 0;
+      margin-bottom: 0;
+      opacity: 0.9;
     }
 
     .form-group {
@@ -146,12 +150,76 @@
       transform: translateY(0);
     }
 
-    .status {
-      margin-top: 1.5em;
-      text-align: center;
-      font-weight: 500;
-      min-height: 1.2em;
-      transition: opacity 0.3s ease;
+    /* 8. Toggle Switch */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--border-color);
+      transition: .4s;
+      border-radius: 20px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: var(--primary-color);
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+    
+    .setting-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5em;
+      padding-bottom: 1.5em;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .setting-info {
+      flex: 1;
+      padding-right: 1.5em;
+    }
+
+    .setting-title {
+      font-weight: 600;
+      font-size: 1.1em;
+      margin-bottom: 0.4em;
+    }
+
+    .setting-desc {
+      font-size: 0.9em;
+      color: var(--label-color);
+      line-height: 1.4;
     }
   </style>
 </head>
@@ -159,40 +227,61 @@
 <body>
 
   <div class="container">
-    <div style="display: flex; justify-content: flex-end; margin-bottom: 1em;">
-      <select id="langSelect" style="width: auto; padding: 8px; font-size: 0.9em; cursor: pointer; border: 1px solid var(--border-color); border-radius: 8px; background-color: var(--input-bg-color); color: var(--text-color);">
-        <option value="auto">Auto (Browser)</option>
-        <option value="en">English (en)</option>
-        <option value="de">Deutsch (de)</option>
-        <option value="es">Español (es)</option>
-        <option value="fr">Français (fr)</option>
-        <option value="ja">日本語 (ja)</option>
-        <option value="pt_BR">Português (pt_BR)</option>
-        <option value="zh_CN">中文 (zh_CN)</option>
-      </select>
+    <header>
+      <div style="display: flex; justify-content: flex-end; width: 100%; margin-bottom: -1.5em; position: relative; z-index: 10;">
+        <select id="langSelect" style="width: auto; padding: 6px; font-size: 0.85em; cursor: pointer; border: 1px solid var(--border-color); border-radius: 6px; background-color: var(--input-bg-color); color: var(--text-color);">
+          <option value="auto">Auto (Browser)</option>
+          <option value="en">English (en)</option>
+          <option value="de">Deutsch (de)</option>
+          <option value="es">Español (es)</option>
+          <option value="fr">Français (fr)</option>
+          <option value="ja">日本語 (ja)</option>
+          <option value="pt_BR">Português (pt_BR)</option>
+          <option value="zh_CN">中文 (zh_CN)</option>
+        </select>
+      </div>
+      <h1 id="title">TickTab</h1>
+      <p class="description" id="description">Automatically close inactive tabs after a specified time.</p>
+    </header>
+
+    <main>
+
+    <div class="setting-row">
+      <div class="setting-info">
+        <div class="setting-title" id="enableTitle">Enable TickTab</div>
+        <div class="setting-desc" id="enableDesc">Toggle whether inactive tabs should be closed automatically.</div>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="masterToggle" checked>
+        <span class="slider"></span>
+      </label>
     </div>
-    <h1 id="title">TickTab Settings</h1>
-    <p class="description" id="description">Automatically close inactive tabs after a specified time.</p>
 
     <div class="form-group">
       <label for="timeSelect" id="labelTime">Close tabs after:</label>
-      <select id="timeSelect">
-        <option value="1440" id="opt1Day">1 Day</option>
-        <option value="4320" id="opt3Days">3 Days</option>
-        <option value="10080" id="opt1Week">1 Week</option>
-        <option value="20160" id="opt2Weeks">2 Weeks</option>
-        <option value="43200" id="opt1Month">1 Month</option>
-        <option value="custom" id="optCustom">Custom (Minutes)</option>
-      </select>
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <select id="timeSelect" style="flex: 2;">
+          <option value="1440" id="opt1Day">1 Day</option>
+          <option value="4320" id="opt3Days">3 Days</option>
+          <option value="10080" id="opt1Week">1 Week</option>
+          <option value="20160" id="opt2Weeks">2 Weeks</option>
+          <option value="43200" id="opt1Month">1 Month</option>
+          <option value="custom" id="optCustom">Custom</option>
+        </select>
 
-      <div class="custom-time-container" id="customInputWrapper" style="display: none;">
-        <input type="number" id="customMinutes" min="1" max="5256000" placeholder="e.g. 120">
-        <span id="labelMinutes">Minutes</span>
+        <div class="custom-time-container" id="customInputWrapper" style="display: none; flex: 1; margin-top: 0;">
+          <input type="number" id="customMinutes" min="1" max="100000" placeholder="e.g. 60" style="flex: 1; margin-bottom: 0;">
+          <select id="unitSelect" style="flex: 1; margin-bottom: 0;">
+            <option value="1" id="optUnitMinutes">Minutes</option>
+            <option value="60" id="optUnitHours">Hours</option>
+            <option value="1440" id="optUnitDays">Days</option>
+            <option value="10080" id="optUnitWeeks">Weeks</option>
+          </select>
+        </div>
       </div>
     </div>
 
-    <button class="btn" id="saveBtn">Save Settings</button>
-    <div class="status" id="statusMessage"></div>
+    </main>
   </div>
 
   <script src="options.js"></script>

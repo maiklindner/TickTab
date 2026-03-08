@@ -1,47 +1,65 @@
 {
-    "extName": {
-        "message": "TickTab - Auto Close"
-    },
-    "extDescription": {
-        "message": "自动关闭非活动标签页，以节省内存并保持浏览器整洁。即便重启浏览器也能继续运行。"
-    },
-    "optionsTitle": {
-        "message": "TickTab 设置"
-    },
-    "optionsDescription": {
-        "message": "在指定时间后自动关闭非活动标签页。"
-    },
-    "optionsLabelTime": {
-        "message": "在此之后关闭标签页:"
-    },
-    "options1Day": {
-        "message": "1 天"
-    },
-    "options3Days": {
-        "message": "3 天"
-    },
-    "options1Week": {
-        "message": "1 周"
-    },
-    "options2Weeks": {
-        "message": "2 周"
-    },
-    "options1Month": {
-        "message": "1 个月"
-    },
-    "optionsCustom": {
-        "message": "自定义 (分钟)"
-    },
-    "optionsMinutes": {
-        "message": "分钟"
-    },
-    "optionsSaveBtn": {
-        "message": "保存设置"
-    },
-    "optionsSavedSuccess": {
-        "message": "保存成功！"
-    },
-    "optionsErrorRange": {
-        "message": "请输入 1 到 5,256,000 之间的值。"
-    }
+  "extName": {
+    "message": "TickTab - Auto Close"
+  },
+  "extDescription": {
+    "message": "自动关闭非活动标签页，以节省内存并保持浏览器整洁。即便重启浏览器也能继续运行。"
+  },
+  "optionsTitle": {
+    "message": "TickTab"
+  },
+  "optionsDescription": {
+    "message": "在指定时间后自动关闭非活动标签页。"
+  },
+  "optionsLabelTime": {
+    "message": "在此之后关闭标签页:"
+  },
+  "options1Day": {
+    "message": "1 天"
+  },
+  "options3Days": {
+    "message": "3 天"
+  },
+  "options1Week": {
+    "message": "1 周"
+  },
+  "options2Weeks": {
+    "message": "2 周"
+  },
+  "options1Month": {
+    "message": "1 个月"
+  },
+  "optionsCustom": {
+    "message": "自定义"
+  },
+  "optionsMinutes": {
+    "message": "分钟"
+  },
+  "optionsSaveBtn": {
+    "message": "保存设置"
+  },
+  "optionsSavedSuccess": {
+    "message": "保存成功！"
+  },
+  "optionsErrorRange": {
+    "message": "请输入 1 到 5,256,000 之间的值。"
+  },
+  "optionsEnableTitle": {
+    "message": "启用 TickTab"
+  },
+  "optionsEnableDesc": {
+    "message": "选择是否自动关闭不活动的标签页。"
+  },
+  "optionsUnitMinutes": {
+    "message": "分钟"
+  },
+  "optionsUnitHours": {
+    "message": "小时"
+  },
+  "optionsUnitDays": {
+    "message": "天"
+  },
+  "optionsUnitWeeks": {
+    "message": "周"
+  }
 }
