@@ -66,7 +66,7 @@ TickTab es una extensión inteligente y centrada en la privacidad que cierra aut
 - Resistente a reinicios: Los temporizadores se guardan localmente y sobreviven a bloqueos del navegador.
 - Excepciones inteligentes: Nunca cierra la pestaña activa, fijadas o las que reproducen audio/vídeo.
 - Ligero: Utiliza APIs nativas para no agotar la batería ni la CPU.
-- Privacidad Primero: Opera 100% sin conexión. Nunca envía tus datos de navegación.
+- Privacidad Primero: Funciona 100% sin conexión. Nunca envía tus datos de navegación.
 
 --------------------------------------------------------------------------------
 Language: French (fr)
