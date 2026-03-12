@@ -23,11 +23,9 @@ Unlike many other extensions, TickTab survives browser restarts by carefully tra
 
 You have three options to install TickTab:
 
-**1. Chrome Web Store**
-https://chromewebstore.google.com/detail/ticktab-auto-close/icmobmhlapkebikcojedmmcfpohldknl
+**1. [Chrome Web Store](https://chromewebstore.google.com/detail/ticktab-auto-close/icmobmhlapkebikcojedmmcfpohldknl)**
 
-**2. Microsoft Edge Add-ons**
-*Link coming soon*
+**2. [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/ticktab-auto-close/moklapfaggndgdolfccinjiccbklmdhg)**
 
 **3. Manual Installation (Unpacked)**
 1. Clone this repository or download the ZIP and extract it.
