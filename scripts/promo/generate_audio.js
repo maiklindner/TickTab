@@ -52,13 +52,15 @@ async function run() {
         let text = script[i];
         let isSsml = false;
 
-        if (text === 'TickTab') {
+        if (text === 'TickTab' && !localeData.voice.includes('Chirp3-HD')) {
             const ipa = 'tɪk tæb';
             text = `<speak><phoneme alphabet="ipa" ph="${ipa}">TickTab</phoneme></speak>`;
             isSsml = true;
         }
 
-        const hash = crypto.createHash('md5').update(text).digest('hex').substring(0, 8);
+        // Standardized hashing including voice to avoid cross-voice cache contamination
+        const hashInput = text + localeData.voice + (isSsml ? '_ssml' : '');
+        const hash = crypto.createHash('md5').update(hashInput).digest('hex').substring(0, 8);
         const outputPath = path.join(outputDir, `vo_${lang}_${i}_${hash}.mp3`);
         await generateAudio(text, localeData.voice, langCode, outputPath, force, isSsml);
     }

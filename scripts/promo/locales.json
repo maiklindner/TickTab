@@ -1,7 +1,7 @@
 {
   "locales": {
     "en": {
-      "voice": "en-US-Studio-Q",
+      "voice": "en-US-Chirp3-HD-Enceladus",
       "flag": "--lang=en-US",
       "script": [
         "Manage all your open tabs automatically to keep your browser fast.",
@@ -13,10 +13,10 @@
       "features": ["Auto-Close", "Presets & Custom", "Smart Exceptions"]
     },
     "de": {
-      "voice": "de-DE-Studio-B",
+      "voice": "de-DE-Chirp3-HD-Enceladus",
       "flag": "--lang=de",
       "script": [
-        "Verwalte all deine offenen Tabs automatisch für einen schnelleren Browser.",
+        " Verwalte all deine offenen Tabs automatisch für einen schnelleren Browser.",
         "Wähle deine ideale Ablaufzeit mit intelligenten Voreinstellungen.",
         "Brauchst du mehr Präzision? Definiere eigene Intervalle ganz einfach.",
         "Intelligente Ausnahmen schützen deine Tabs. Sicher, schnell und privat.",
@@ -25,7 +25,7 @@
       "features": ["Auto-Close", "Voreinstellungen", "Intelligente Ausnahmen"]
     },
     "ja": {
-      "voice": "ja-JP-Neural2-D",
+      "voice": "ja-JP-Chirp3-HD-Enceladus",
       "flag": "--lang=ja",
       "script": [
         "ブラウザを高速に保つため、タブを自動管理。",
@@ -37,7 +37,7 @@
       "features": ["自動終了", "プリセットとカスタム", "スマートな除外"]
     },
     "es": {
-      "voice": "es-ES-Studio-F",
+      "voice": "es-ES-Chirp3-HD-Enceladus",
       "flag": "--lang=es",
       "script": [
         "Gestiona todas tus pestañas abiertas automáticamente para un navegador más rápido.",
@@ -49,7 +49,7 @@
       "features": ["Cierre Automático", "Preajustes", "Excepciones Inteligentes"]
     },
     "fr": {
-      "voice": "fr-FR-Studio-D",
+      "voice": "fr-FR-Chirp3-HD-Enceladus",
       "flag": "--lang=fr",
       "script": [
         "Gérez tous vos onglets ouverts automatiquement pour un navigateur plus rapide.",
@@ -61,7 +61,7 @@
       "features": ["Fermeture Auto", "Préréglages", "Exceptions Intelligentes"]
     },
     "pt_BR": {
-      "voice": "pt-BR-Neural2-B",
+      "voice": "pt-BR-Chirp3-HD-Enceladus",
       "flag": "--lang=pt-BR",
       "script": [
         "Gerencie todas as suas abas abertas automaticamente para um navegador mais rápido.",
@@ -73,7 +73,7 @@
       "features": ["Fechamento Auto", "Predefinições", "Exceções Inteligentes"]
     },
     "zh_CN": {
-      "voice": "cmn-CN-Wavenet-C",
+      "voice": "cmn-CN-Chirp3-HD-Enceladus",
       "flag": "--lang=zh-CN",
       "script": [
         "自动管理所有打开的标签页，保持浏览器运行流畅。",
