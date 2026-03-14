@@ -61,5 +61,8 @@
   },
   "optionsUnitWeeks": {
     "message": "周"
+  },
+  "optionsPlaceholderMinutes": {
+    "message": "例如 60"
   }
 }

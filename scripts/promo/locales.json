@@ -1,0 +1,88 @@
+{
+  "locales": {
+    "en": {
+      "voice": "en-US-Studio-Q",
+      "flag": "--lang=en-US",
+      "script": [
+        "Manage all your open tabs automatically to keep your browser fast.",
+        "Set your ideal expiration time with clever presets.",
+        "Need more precision? Define custom intervals your way.",
+        "Smart exemptions protect your tabs. Simple, fast, and 100% private.",
+        "TickTab"
+      ],
+      "features": ["Auto-Close", "Presets & Custom", "Smart Exceptions"]
+    },
+    "de": {
+      "voice": "de-DE-Studio-B",
+      "flag": "--lang=de",
+      "script": [
+        "Verwalte all deine offenen Tabs automatisch für einen schnelleren Browser.",
+        "Wähle deine ideale Ablaufzeit mit intelligenten Voreinstellungen.",
+        "Brauchst du mehr Präzision? Definiere eigene Intervalle ganz einfach.",
+        "Intelligente Ausnahmen schützen deine Tabs. Sicher, schnell und privat.",
+        "TickTab"
+      ],
+      "features": ["Auto-Close", "Voreinstellungen", "Intelligente Ausnahmen"]
+    },
+    "ja": {
+      "voice": "ja-JP-Neural2-D",
+      "flag": "--lang=ja",
+      "script": [
+        "ブラウザを高速に保つため、タブを自動管理。",
+        "プリセットで有効期限をスマートに設定。",
+        "カスタム間隔も自由に定義できます。",
+        "スマートな除外機能で、安全かつ完全にプライベート。",
+        "TickTab"
+      ],
+      "features": ["自動終了", "プリセットとカスタム", "スマートな除外"]
+    },
+    "es": {
+      "voice": "es-ES-Studio-F",
+      "flag": "--lang=es",
+      "script": [
+        "Gestiona todas tus pestañas abiertas automáticamente para un navegador más rápido.",
+        "Elige tu tiempo de expiración ideal con preajustes inteligentes.",
+        "¿Necesitas más precisión? Define intervalos personalizados a tu manera.",
+        "Las excepciones inteligentes protegen tus pestañas. Seguro, rápido y privado.",
+        "TickTab"
+      ],
+      "features": ["Cierre Automático", "Preajustes", "Excepciones Inteligentes"]
+    },
+    "fr": {
+      "voice": "fr-FR-Studio-D",
+      "flag": "--lang=fr",
+      "script": [
+        "Gérez tous vos onglets ouverts automatiquement pour un navigateur plus rapide.",
+        "Réglez l'expiration idéale via des préréglages intelligents.",
+        "Besoin de plus de précision ? Définissez des intervalles personnalisés à votre guise.",
+        "Des exceptions intelligentes protègent vos onglets. Sûr, rapide et privé.",
+        "TickTab"
+      ],
+      "features": ["Fermeture Auto", "Préréglages", "Exceptions Intelligentes"]
+    },
+    "pt_BR": {
+      "voice": "pt-BR-Neural2-B",
+      "flag": "--lang=pt-BR",
+      "script": [
+        "Gerencie todas as suas abas abertas automaticamente para um navegador mais rápido.",
+        "Defina seu tempo de expiração ideal com predefinições inteligentes.",
+        "Precisa de mais precisão? Defina intervalos personalizados do seu jeito.",
+        "Exceções inteligentes protegem suas abas. Seguro, rápido e privado.",
+        "TickTab"
+      ],
+      "features": ["Fechamento Auto", "Predefinições", "Exceções Inteligentes"]
+    },
+    "zh_CN": {
+      "voice": "cmn-CN-Wavenet-C",
+      "flag": "--lang=zh-CN",
+      "script": [
+        "自动管理所有打开的标签页，保持浏览器运行流畅。",
+        "通过智能预设设置理想的过期时间。",
+        "需要更精确的设置？按照你的方式自定义时间间隔。",
+        "智能豁免功能保护你的标签页。安全、快速且 100% 私密。",
+        "TickTab"
+      ],
+      "features": ["自动关闭", "预设与自定义", "智能豁免"]
+    }
+  }
+}

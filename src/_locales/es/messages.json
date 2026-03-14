@@ -61,5 +61,8 @@
   },
   "optionsUnitWeeks": {
     "message": "Semanas"
+  },
+  "optionsPlaceholderMinutes": {
+    "message": "p. ej. 60"
   }
 }

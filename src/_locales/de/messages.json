@@ -61,5 +61,8 @@
   },
   "optionsUnitWeeks": {
     "message": "Wochen"
+  },
+  "optionsPlaceholderMinutes": {
+    "message": "z.B. 60"
   }
 }

@@ -49,6 +49,7 @@ function localizeHtmlPage() {
     }
     document.getElementById('enableTitle').textContent = getMessage("optionsEnableTitle") || "Enable TickTab";
     document.getElementById('enableDesc').textContent = getMessage("optionsEnableDesc") || "Toggle whether inactive tabs should be closed automatically.";
+    document.getElementById('customMinutes').placeholder = getMessage("optionsPlaceholderMinutes") || "e.g. 60";
     document.title = getMessage("extName");
 }
 
