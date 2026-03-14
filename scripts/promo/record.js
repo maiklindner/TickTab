@@ -7,11 +7,20 @@ const locales = require('./locales.json').locales;
 const crypto = require('crypto');
 
 function getVoPath(audioDir, localeKey, index, text) {
+    const localeData = locales[localeKey];
+    const voice = localeData ? localeData.voice : '';
+    let finalInput = text;
+    let isSsml = false;
+
+    // MANDATORY PREMIUM PHONATION
     if (text === 'TickTab') {
         const ipa = 'tɪk tæb';
-        text = `<speak><phoneme alphabet="ipa" ph="${ipa}">TickTab</phoneme></speak>`;
+        finalInput = `<speak><phoneme alphabet="ipa" ph="${ipa}">TickTab</phoneme></speak>`;
+        isSsml = true;
     }
-    const hash = crypto.createHash('md5').update(text).digest('hex').substring(0, 8);
+
+    const hashInput = finalInput + voice + (isSsml ? '_ssml' : '');
+    const hash = crypto.createHash('md5').update(hashInput).digest('hex').substring(0, 8);
     return path.join(audioDir, `vo_${localeKey}_${index}_${hash}.mp3`);
 }
 
@@ -253,7 +262,7 @@ async function recordPromo(localeKey) {
     filterComplex += `[ducked][allvo_mix]amix=inputs=2:normalize=0:duration=first,loudnorm=I=-16:TP=-1.5:LRA=11[final_audio]`;
 
     const voInputs = localeData.script.map((text, i) => `-i "${getVoPath(audioDir, localeKey, i, text)}"`).join(' ');
-    const cmd = `ffmpeg -y -i "${videoPath}" -i "${music}" ${voInputs} -filter_complex "${filterComplex}" -map 0:v -map "[final_audio]" -c:v copy -c:a aac -shortest "${finalPath}"`;
+    const cmd = `ffmpeg -y -i "${videoPath}" -i "${music}" ${voInputs} -filter_complex "${filterComplex}" -map 0:v -map "[final_audio]" -c:v libx264 -pix_fmt yuv420p -r 60 -b:a 192k -ar 44100 "${finalPath}"`;
 
     try { execSync(cmd); console.log(`Final video saved: ${finalPath}`); } 
     catch (err) { console.error('FFmpeg error:', err.message); }

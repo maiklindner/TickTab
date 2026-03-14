@@ -52,7 +52,8 @@ async function run() {
         let text = script[i];
         let isSsml = false;
 
-        if (text === 'TickTab' && !localeData.voice.includes('Chirp3-HD')) {
+        // MANDATORY PREMIUM PHONATION
+        if (text === 'TickTab') {
             const ipa = 'tɪk tæb';
             text = `<speak><phoneme alphabet="ipa" ph="${ipa}">TickTab</phoneme></speak>`;
             isSsml = true;
