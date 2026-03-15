@@ -5,6 +5,7 @@ const fs = require('fs');
 const { execSync } = require('child_process');
 const locales = require('./locales.json').locales;
 const crypto = require('crypto');
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 function getVoPath(audioDir, localeKey, index, text) {
     const localeData = locales[localeKey];
@@ -62,7 +63,7 @@ async function recordPromo(localeKey) {
         await page.setViewport({ width: 1280, height: 720 });
 
         // Wait for extension to load
-        await new Promise(r => setTimeout(r, 2000));
+        await delay(2000);
         const targets = await browser.targets();
         const extensionTarget = targets.find(t => t.url().startsWith('chrome-extension://'));
         if (!extensionTarget) {
@@ -92,7 +93,7 @@ async function recordPromo(localeKey) {
         
         // MANDATORY RELOAD to fix initial English flash
         await page.reload({ waitUntil: 'networkidle2' });
-        await page.waitForTimeout(500);
+        await delay(500);
 
         // Start Intro
         await page.goto('about:blank');
@@ -114,6 +115,8 @@ async function recordPromo(localeKey) {
             document.body.appendChild(logo);
         });
 
+        console.log('Stabilizing Chromium (5s wait)...');
+        await delay(5000);
         console.log('Recording started...');
         await recorder.start(videoPath);
         const recStartTime = Date.now();
@@ -122,7 +125,7 @@ async function recordPromo(localeKey) {
             const elapsed = (Date.now() - recStartTime) / 1000;
             const remaining = targetSeconds - elapsed;
             if (remaining > 0) {
-                await page.waitForTimeout(remaining * 1000);
+                await delay(remaining * 1000);
             }
         };
         const logoBase64 = fs.readFileSync(path.join(extensionPath, 'icons/logo300.png'), { encoding: 'base64' });
@@ -146,17 +149,17 @@ async function recordPromo(localeKey) {
             await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: 'light' }]);
             
             await page.waitForSelector('.slider');
-            await page.waitForTimeout(1000);
+            await delay(1000);
             await page.click('.slider'); // Turn OFF
-            await page.waitForTimeout(1500);
+            await delay(1500);
             await page.click('.slider'); // Turn ON
-            await page.waitForTimeout(2500);
+            await delay(2500);
             await waitToMark(10); // Phase 1 must end at 10s
 
             // --- 10-18s: Phase 2 (Time Presets & Custom) ---
             console.log('Phase 2: Adjusting Expiration Timer');
             await page.select('#timeSelect', 'custom');
-            await page.waitForTimeout(1000);
+            await delay(1000);
             
             await page.waitForSelector('#customMinutes');
             await page.click('#customMinutes', { clickCount: 3 });
@@ -164,14 +167,14 @@ async function recordPromo(localeKey) {
             
             // Final safety: direct value reset
             await page.$eval('#customMinutes', el => el.value = '');
-            await page.waitForTimeout(300);
+            await delay(300);
             
             await page.type('#customMinutes', '30', { delay: 100 });
             await page.select('#unitSelect', '1'); // Minutes
             
-            await page.waitForTimeout(1000);
+            await delay(1000);
             await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: 'dark' }]);
-            await page.waitForTimeout(4000);
+            await delay(4000);
             await waitToMark(18); // Phase 2 must end at 18s
 
             // --- 18-30s: Phase 3 Overlay & 24s Sync Outro ---
@@ -240,7 +243,7 @@ async function recordPromo(localeKey) {
                 }, 6000);
             }, localeData.features, localeData.script[localeData.script.length - 1], logoBase64);
             
-            await page.waitForTimeout(12000);
+            await delay(12000);
 
         } finally {
             await recorder.stop();
@@ -252,11 +255,11 @@ async function recordPromo(localeKey) {
     const offsets = [2.5, 7.5, 12.0, 17.5, 25.0];
     const masterGain = 2.0;
 
-    let filterComplex = `[1:a]volume=0.8[bg_music];`;
+    let filterComplex = `[1:a]volume=0.7[bg_music];`;
     let voMixInputStr = '';
     for (let i = 0; i < localeData.script.length; i++) {
-        const delay = Math.round(offsets[i] * 1000);
-        filterComplex += `[${i + 2}:a]adelay=${delay}|${delay}[v${i}];`;
+        const d = Math.round(offsets[i] * 1000);
+        filterComplex += `[${i + 2}:a]adelay=${d}|${d}[v${i}];`;
         voMixInputStr += `[v${i}]`;
     }
     filterComplex += `${voMixInputStr}amix=inputs=${localeData.script.length}:normalize=0:dropout_transition=0,volume=${masterGain * localeData.script.length}[allvo_raw];`;
