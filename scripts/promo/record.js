@@ -84,11 +84,14 @@ async function recordPromo(localeKey) {
         await page.goto(optionsUrl, { waitUntil: 'networkidle2' });
         await page.evaluate((lang) => {
             return new Promise((resolve) => {
-                chrome.storage.sync.set({ language: lang }, () => {
-                    resolve();
+                chrome.storage.local.set({ language: lang }, () => {
+                    chrome.storage.sync.set({ language: lang }, () => resolve());
                 });
             });
         }, localeKey);
+        
+        // MANDATORY RELOAD to fix initial English flash
+        await page.reload({ waitUntil: 'networkidle2' });
         await page.waitForTimeout(500);
 
         // Start Intro
