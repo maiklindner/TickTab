@@ -10,7 +10,11 @@
         "Smart exemptions protect your tabs. Simple, fast, and 100% private.",
         "TickTab"
       ],
-      "features": ["Auto-Close", "Presets & Custom", "Smart Exceptions"]
+      "features": [
+        "Auto-Close",
+        "Presets & Custom",
+        "Smart Exceptions"
+      ]
     },
     "de": {
       "voice": "de-DE-Chirp3-HD-Enceladus",
@@ -18,11 +22,15 @@
       "script": [
         " Verwalte all deine offenen Tabs automatisch für einen schnelleren Browser.",
         "Wähle deine ideale Ablaufzeit mit intelligenten Voreinstellungen.",
-        "Brauchst du mehr Präzision? Definiere eigene Intervalle ganz einfach.",
+        "Brauchst du mehr Präzision? Definiere ganz einfach eigene Intervalle.",
         "Intelligente Ausnahmen schützen deine Tabs. Sicher, schnell und privat.",
         "TickTab"
       ],
-      "features": ["Auto-Close", "Voreinstellungen", "Intelligente Ausnahmen"]
+      "features": [
+        "Auto-Close",
+        "Voreinstellungen",
+        "Intelligente Ausnahmen"
+      ]
     },
     "ja": {
       "voice": "ja-JP-Chirp3-HD-Enceladus",
@@ -34,7 +42,11 @@
         "除外機能で100%プライバシー保護。",
         "TickTab"
       ],
-      "features": ["自動終了", "プリセットとカスタム", "スマートな除外"]
+      "features": [
+        "自動終了",
+        "プリセットとカスタム",
+        "スマートな除外"
+      ]
     },
     "es": {
       "voice": "es-ES-Chirp3-HD-Enceladus",
@@ -46,7 +58,11 @@
         "Las excepciones inteligentes protegen tus pestañas. Seguro, rápido y privado.",
         "TickTab"
       ],
-      "features": ["Cierre Automático", "Preajustes", "Excepciones Inteligentes"]
+      "features": [
+        "Cierre Automático",
+        "Preajustes",
+        "Excepciones Inteligentes"
+      ]
     },
     "fr": {
       "voice": "fr-FR-Chirp3-HD-Enceladus",
@@ -58,7 +74,11 @@
         "Des exceptions intelligentes protègent vos onglets. Sûr, rapide et privé.",
         "TickTab"
       ],
-      "features": ["Fermeture Auto", "Préréglages", "Exceptions Intelligentes"]
+      "features": [
+        "Fermeture Auto",
+        "Préréglages",
+        "Exceptions Intelligentes"
+      ]
     },
     "pt_BR": {
       "voice": "pt-BR-Chirp3-HD-Enceladus",
@@ -70,7 +90,11 @@
         "Exceções inteligentes protegem suas abas. Seguro, rápido e privado.",
         "TickTab"
       ],
-      "features": ["Fechamento Auto", "Predefinições", "Exceções Inteligentes"]
+      "features": [
+        "Fechamento Auto",
+        "Predefinições",
+        "Exceções Inteligentes"
+      ]
     },
     "zh_CN": {
       "voice": "cmn-CN-Chirp3-HD-Enceladus",
@@ -82,7 +106,11 @@
         "智能豁免，100% 隐私保护。",
         "TickTab"
       ],
-      "features": ["自动关闭", "预设与自定义", "智能豁免"]
+      "features": [
+        "自动关闭",
+        "预设与自定义",
+        "智能豁免"
+      ]
     }
   }
 }
