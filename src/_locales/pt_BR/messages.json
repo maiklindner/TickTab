@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "TickTab - Auto Close"
+    "message": "TickTab"
   },
   "extDescription": {
     "message": "Fecha automaticamente guias inativas para economizar memória e manter seu navegador limpo. Sobrevive a reinicializações."
@@ -9,7 +9,7 @@
     "message": "TickTab"
   },
   "optionsDescription": {
-    "message": "Fechar abas inativas automaticamente após um tempo específico."
+    "message": "Configure aqui o timer de fechamento automático e o comportamento da lista branca para suas abas."
   },
   "optionsLabelTime": {
     "message": "Fechar abas após:"

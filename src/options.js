@@ -33,7 +33,7 @@ function initLocalization(callback) {
 
 function localizeHtmlPage() {
     document.getElementById('titleH1').textContent = getMessage('extName');
-    document.getElementById('optionsDesc').textContent = getMessage('optionsDesc');
+    document.getElementById('optionsDescription').textContent = getMessage('optionsDescription');
     document.getElementById('labelTime').textContent = getMessage("optionsLabelTime");
     document.getElementById('opt1Day').textContent = getMessage("options1Day");
     document.getElementById('opt3Days').textContent = getMessage("options3Days");

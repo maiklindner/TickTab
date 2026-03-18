@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "TickTab - Auto Close"
+    "message": "TickTab"
   },
   "extDescription": {
     "message": "Cierra automáticamente las pestañas inactivas para ahorrar memoria y mantener limpio tu navegador. Sobrevive a reinicios del navegador."
@@ -9,7 +9,7 @@
     "message": "TickTab"
   },
   "optionsDescription": {
-    "message": "Cerrar automáticamente las pestañas inactivas después de un tiempo específico."
+    "message": "Configura aquí el temporizador de cierre automático y el comportamiento de la lista blanca para tus pestañas."
   },
   "optionsLabelTime": {
     "message": "Cerrar pestañas después de:"

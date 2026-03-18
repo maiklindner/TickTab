@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "TickTab - Auto Close"
+    "message": "TickTab"
   },
   "extDescription": {
     "message": "Ferme automatiquement les onglets inactifs pour économiser de la mémoire et garder ton navigateur propre. Survit aux redémarrages."
@@ -9,7 +9,7 @@
     "message": "TickTab"
   },
   "optionsDescription": {
-    "message": "Fermer automatiquement les onglets inactifs après une durée spécifiée."
+    "message": "Configurez ici le délai de fermeture automatique et le comportement de la liste blanche pour vos onglets."
   },
   "optionsLabelTime": {
     "message": "Fermer les onglets après :"

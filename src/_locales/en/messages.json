@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "TickTab - Auto Close"
+    "message": "TickTab"
   },
   "extDescription": {
     "message": "Automatically closes inactive tabs to save memory and keep your browser clean. Survives browser restarts."
@@ -9,7 +9,7 @@
     "message": "TickTab"
   },
   "optionsDescription": {
-    "message": "Automatically close inactive tabs after a specified time."
+    "message": "Configure the auto-close timer and whitelist behavior for your tabs."
   },
   "optionsLabelTime": {
     "message": "Close tabs after:"

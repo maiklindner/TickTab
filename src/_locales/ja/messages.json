@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "TickTab - Auto Close"
+    "message": "TickTab"
   },
   "extDescription": {
     "message": "未使用のタブを自動で閉じてメモリを節約し、ブラウザをクリーンに保ちます。再起動後も機能し続けます。"
@@ -9,7 +9,7 @@
     "message": "TickTab"
   },
   "optionsDescription": {
-    "message": "指定した時間が経過した後、非アクティブなタブを自動的に閉じます。"
+    "message": "ここで自動終了タイマーとタブのホワイトリスト動作を設定します。"
   },
   "optionsLabelTime": {
     "message": "タブを閉じるまでの時間:"
