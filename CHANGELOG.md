@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.2] - 2026-03-18
+
+### Added
+- **Screenshot Support**: Added full support for localized screenshot generation.
+
+## [1.2.1] - 2026-03-18
+
+### Changed
+- **UI Standardization**: Modernized options page UI with refined toggle switches to match the extension suite style.
+
 ## [1.2] - 2026-03-09
 
 ### Changed
