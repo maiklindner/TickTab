@@ -14,7 +14,11 @@
         "Auto-Close",
         "Presets & Custom",
         "Smart Exceptions"
-      ]
+      ],
+      "screenshotState": {
+        "expirationMinutes": 20160,
+        "enabled": true
+      }
     },
     "de": {
       "voice": "de-DE-Chirp3-HD-Enceladus",
@@ -30,7 +34,11 @@
         "Auto-Close",
         "Voreinstellungen",
         "Intelligente Ausnahmen"
-      ]
+      ],
+      "screenshotState": {
+        "expirationMinutes": 20160,
+        "enabled": true
+      }
     },
     "ja": {
       "voice": "ja-JP-Chirp3-HD-Enceladus",
@@ -46,7 +54,11 @@
         "自動終了",
         "プリセットとカスタム",
         "スマートな除外"
-      ]
+      ],
+      "screenshotState": {
+        "expirationMinutes": 20160,
+        "enabled": true
+      }
     },
     "es": {
       "voice": "es-ES-Chirp3-HD-Enceladus",
@@ -62,7 +74,11 @@
         "Cierre Automático",
         "Preajustes",
         "Excepciones Inteligentes"
-      ]
+      ],
+      "screenshotState": {
+        "expirationMinutes": 20160,
+        "enabled": true
+      }
     },
     "fr": {
       "voice": "fr-FR-Chirp3-HD-Enceladus",
@@ -78,7 +94,11 @@
         "Fermeture Auto",
         "Préréglages",
         "Exceptions Intelligentes"
-      ]
+      ],
+      "screenshotState": {
+        "expirationMinutes": 20160,
+        "enabled": true
+      }
     },
     "pt_BR": {
       "voice": "pt-BR-Chirp3-HD-Enceladus",
@@ -94,7 +114,11 @@
         "Fechamento Auto",
         "Predefinições",
         "Exceções Inteligentes"
-      ]
+      ],
+      "screenshotState": {
+        "expirationMinutes": 20160,
+        "enabled": true
+      }
     },
     "zh_CN": {
       "voice": "cmn-CN-Chirp3-HD-Enceladus",
@@ -110,7 +134,11 @@
         "自动关闭",
         "预设与自定义",
         "智能豁免"
-      ]
+      ],
+      "screenshotState": {
+        "expirationMinutes": 20160,
+        "enabled": true
+      }
     }
   }
 }
