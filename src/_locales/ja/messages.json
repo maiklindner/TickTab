@@ -64,5 +64,41 @@
   },
   "optionsPlaceholderMinutes": {
     "message": "例: 60"
+  },
+  "popupNoInactive": {
+    "message": "非アクティブなタブはありません。"
+  },
+  "popupAgeMinutes": {
+    "message": "$mins$分前",
+    "placeholders": {
+      "mins": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeHours": {
+    "message": "$hours$時間前",
+    "placeholders": {
+      "hours": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeDays": {
+    "message": "$days$日前",
+    "placeholders": {
+      "days": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeJustNow": {
+    "message": "たった今"
+  },
+  "popupCloseStale": {
+    "message": "古いタブを閉じる"
+  },
+  "popupCloseTab": {
+    "message": "タブを閉じる"
   }
 }

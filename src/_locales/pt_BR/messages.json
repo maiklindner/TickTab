@@ -64,5 +64,41 @@
   },
   "optionsPlaceholderMinutes": {
     "message": "ex. 60"
+  },
+  "popupNoInactive": {
+    "message": "Nenhuma aba inativa rastreada."
+  },
+  "popupAgeMinutes": {
+    "message": "Há $mins$m",
+    "placeholders": {
+      "mins": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeHours": {
+    "message": "Há $hours$h",
+    "placeholders": {
+      "hours": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeDays": {
+    "message": "Há $days$d",
+    "placeholders": {
+      "days": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeJustNow": {
+    "message": "Agora mesmo"
+  },
+  "popupCloseStale": {
+    "message": "Fechar abas inativas"
+  },
+  "popupCloseTab": {
+    "message": "Fechar aba"
   }
 }

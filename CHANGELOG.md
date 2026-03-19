@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] - 2026-03-19
+
+### Added
+- **Management Popup**: A new interactive popup to visualize and manage tab expiration.
+- **Tab Life-Tracker**: Real-time display of how long each open tab has been inactive.
+- **Manual Cleanup**: Options to close individual tabs or all stale tabs directly from the popup.
+- **Improved UX**: Redesigned the extension icon action to provide more transparency and control.
+
 ## [1.2.2] - 2026-03-18
 
 ### Added

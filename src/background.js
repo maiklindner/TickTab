@@ -43,13 +43,16 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
 
 // Alarm setup on installation (and initialization)
 chrome.runtime.onInstalled.addListener(() => {
-    // Check every 15 minutes
-    chrome.alarms.create(ALARM_NAME, { periodInMinutes: 15 });
+    // Check every 1 minute to stay responsive for short expiration settings
+    chrome.alarms.create(ALARM_NAME, { periodInMinutes: 1 });
 
-    // Set default value if not exists
-    chrome.storage.local.get(['expirationMinutes'], (res) => {
+    // Set default values if not exists
+    chrome.storage.local.get(['expirationMinutes', 'enabled'], (res) => {
         if (!res.expirationMinutes) {
             chrome.storage.local.set({ expirationMinutes: DEFAULT_EXPIRATION_MINUTES });
+        }
+        if (res.enabled === undefined) {
+            chrome.storage.local.set({ enabled: true });
         }
     });
 
@@ -126,14 +129,14 @@ async function checkAndCloseTickTabs(isManual = false) {
     }
 }
 
-// Garbage collection for manually closed tabs
-chrome.tabs.onRemoved.addListener(async (tabId, removeInfo) => {
-    // Unfortunately we don't get a URL here. A complete GC run over all entries
-    // on browser startup would be possible, but since URLs are just small strings and numbers,
-    // we ignore this for now (5MB limit for local.storage is plenty).
+// Listen for messages from the popup
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request.action === 'checkAndClose') {
+        checkAndCloseTickTabs(request.isManual).then(() => {
+            sendResponse({ success: true });
+        });
+        return true; // Keep channel open for async response
+    }
 });
 
-// Listener for extension icon click (manual cleanup)
-chrome.action.onClicked.addListener(async (tab) => {
-    await checkAndCloseTickTabs(true);
-});
+// Rule evaluation and closing triggers are handled via alarms and the management popup.

@@ -64,5 +64,41 @@
   },
   "optionsPlaceholderMinutes": {
     "message": "p. ej. 60"
+  },
+  "popupNoInactive": {
+    "message": "No se rastrean pestañas inactivas."
+  },
+  "popupAgeMinutes": {
+    "message": "Hace $mins$m",
+    "placeholders": {
+      "mins": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeHours": {
+    "message": "Hace $hours$h",
+    "placeholders": {
+      "hours": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeDays": {
+    "message": "Hace $days$d",
+    "placeholders": {
+      "days": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeJustNow": {
+    "message": "Ahora mismo"
+  },
+  "popupCloseStale": {
+    "message": "Cerrar pestañas inactivas"
+  },
+  "popupCloseTab": {
+    "message": "Cerrar pestaña"
   }
 }

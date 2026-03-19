@@ -64,5 +64,44 @@
   },
   "optionsPlaceholderMinutes": {
     "message": "z.B. 60"
+  },
+  "popupNoInactive": {
+    "message": "Keine inaktiven Tabs erfasst."
+  },
+  "popupAgeMinutes": {
+    "message": "Vor $mins$m aktiv",
+    "placeholders": {
+      "mins": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeHours": {
+    "message": "Vor $hours$h aktiv",
+    "placeholders": {
+      "hours": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeDays": {
+    "message": "Vor $days$d aktiv",
+    "placeholders": {
+      "days": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeJustNow": {
+    "message": "Gerade aktiv"
+  },
+  "popupCloseStale": {
+    "message": "Inaktive Tabs schließen"
+  },
+  "popupCloseTab": {
+    "message": "Tab schließen"
+  },
+  "popupSortTitle": {
+    "message": "Sortierung ändern"
   }
 }

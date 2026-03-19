@@ -64,5 +64,41 @@
   },
   "optionsPlaceholderMinutes": {
     "message": "例如 60"
+  },
+  "popupNoInactive": {
+    "message": "没有追踪到非活动标签页。"
+  },
+  "popupAgeMinutes": {
+    "message": "$mins$ 分钟前",
+    "placeholders": {
+      "mins": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeHours": {
+    "message": "$hours$ 小时前",
+    "placeholders": {
+      "hours": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeDays": {
+    "message": "$days$ 天前",
+    "placeholders": {
+      "days": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeJustNow": {
+    "message": "刚刚"
+  },
+  "popupCloseStale": {
+    "message": "关闭过期的标签页"
+  },
+  "popupCloseTab": {
+    "message": "关闭标签页"
   }
 }

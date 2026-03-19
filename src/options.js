@@ -117,7 +117,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     masterToggle.addEventListener('change', () => {
-        chrome.storage.local.set({ enabled: masterToggle.checked });
+        chrome.storage.local.set({ enabled: masterToggle.checked }, () => {
+            // Trigger background check if enabled
+            if (masterToggle.checked) {
+                chrome.runtime.sendMessage({ action: 'checkAndClose', isManual: false });
+            }
+        });
     });
 
     function saveSettings() {
@@ -134,7 +139,10 @@ document.addEventListener('DOMContentLoaded', () => {
             minutesToSave = parseInt(timeSelect.value, 10);
         }
 
-        chrome.storage.local.set({ expirationMinutes: minutesToSave });
+        chrome.storage.local.set({ expirationMinutes: minutesToSave }, () => {
+            // Trigger background check to apply new timing immediately
+            chrome.runtime.sendMessage({ action: 'checkAndClose', isManual: false });
+        });
     }
 
     // Auto-save on input typing for custom value

@@ -64,5 +64,44 @@
   },
   "optionsPlaceholderMinutes": {
     "message": "e.g. 60"
+  },
+  "popupNoInactive": {
+    "message": "No inactive tabs tracked."
+  },
+  "popupAgeMinutes": {
+    "message": "$mins$m ago",
+    "placeholders": {
+      "mins": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeHours": {
+    "message": "$hours$h ago",
+    "placeholders": {
+      "hours": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeDays": {
+    "message": "$days$d ago",
+    "placeholders": {
+      "days": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeJustNow": {
+    "message": "Just now"
+  },
+  "popupCloseStale": {
+    "message": "Close Stale Tabs"
+  },
+  "popupCloseTab": {
+    "message": "Close Tab"
+  },
+  "popupSortTitle": {
+    "message": "Toggle Sort Order"
   }
 }

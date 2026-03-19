@@ -64,5 +64,41 @@
   },
   "optionsPlaceholderMinutes": {
     "message": "par ex. 60"
+  },
+  "popupNoInactive": {
+    "message": "Aucun onglet inactif suivi."
+  },
+  "popupAgeMinutes": {
+    "message": "Il y a $mins$ min",
+    "placeholders": {
+      "mins": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeHours": {
+    "message": "Il y a $hours$ h",
+    "placeholders": {
+      "hours": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeDays": {
+    "message": "Il y a $days$ j",
+    "placeholders": {
+      "days": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeJustNow": {
+    "message": "À l'instant"
+  },
+  "popupCloseStale": {
+    "message": "Fermer les onglets inactifs"
+  },
+  "popupCloseTab": {
+    "message": "Fermer l'onglet"
   }
 }
