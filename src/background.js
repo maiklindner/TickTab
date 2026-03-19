@@ -112,21 +112,48 @@ async function checkAndCloseTickTabs(isManual = false) {
 
     // Visual feedback on manual click
     if (isManual) {
-        if (closedCount > 0) {
-            chrome.action.setBadgeText({ text: closedCount.toString() });
-        } else {
-            chrome.action.setBadgeText({ text: '0' });
-        }
-        chrome.action.setBadgeBackgroundColor({ color: '#333333' });
-        if (chrome.action.setBadgeTextColor) {
-            chrome.action.setBadgeTextColor({ color: '#eeeeee' });
-        }
-
-        // Remove badge after 2 seconds
-        setTimeout(() => {
-            chrome.action.setBadgeText({ text: '' });
-        }, 2000);
+        showManualFeedback(closedCount);
     }
+}
+
+// Function for "Smart Nuke": Closes ALL inactive tabs (non-pinned, non-audible)
+async function nukeInactiveTabs() {
+    const tabs = await chrome.tabs.query({});
+    let closedCount = 0;
+
+    for (const tab of tabs) {
+        // === EXCEPTIONS ===
+        if (tab.active) continue;
+        if (tab.pinned) continue;
+        if (tab.audible) continue;
+        if (!tab.url || tab.url.startsWith('chrome://') || tab.url.startsWith('edge://') || tab.url.startsWith('about:')) continue;
+
+        const key = `tab_${tab.url}`;
+        chrome.tabs.remove(tab.id).catch(e => console.error("Error nuking tab", e));
+
+        // Remove from storage
+        chrome.storage.local.remove(key);
+        closedCount++;
+    }
+
+    showManualFeedback(closedCount);
+}
+
+function showManualFeedback(closedCount) {
+    if (closedCount > 0) {
+        chrome.action.setBadgeText({ text: closedCount.toString() });
+    } else {
+        chrome.action.setBadgeText({ text: '0' });
+    }
+    chrome.action.setBadgeBackgroundColor({ color: '#333333' });
+    if (chrome.action.setBadgeTextColor) {
+        chrome.action.setBadgeTextColor({ color: '#eeeeee' });
+    }
+
+    // Remove badge after 2 seconds
+    setTimeout(() => {
+        chrome.action.setBadgeText({ text: '' });
+    }, 2000);
 }
 
 // Listen for messages from the popup
@@ -135,7 +162,13 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         checkAndCloseTickTabs(request.isManual).then(() => {
             sendResponse({ success: true });
         });
-        return true; // Keep channel open for async response
+        return true; 
+    }
+    if (request.action === 'nukeInactive') {
+        nukeInactiveTabs().then(() => {
+            sendResponse({ success: true });
+        });
+        return true;
     }
 });
 

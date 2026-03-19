@@ -96,7 +96,7 @@
     "message": "Just now"
   },
   "popupCloseStale": {
-    "message": "Close Stale Tabs"
+    "message": "Clean All Inactive Tabs"
   },
   "popupCloseTab": {
     "message": "Close Tab"

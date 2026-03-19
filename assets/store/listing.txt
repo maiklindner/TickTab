@@ -21,6 +21,9 @@ Is your browser constantly cluttered with dozens of tabs you promised yourself y
 - Master Toggle: Quickly pause the extension at any time via the options menu.
 - Restart Resilient: TickTab carefully tracks tab activity locally, so timers survive restarts and crashes.
 - Smart Exceptions: Never closes the active tab, pinned tabs, or tabs playing audio/video.
+- Smart Nuke: Instantly close all inactive tabs with one click while keeping your media and pinned tabs safe.
+- Sortable Popup: Arrange tabs by age (ascending/descending) to find what you need faster.
+- Faster Cleanup: Increased check frequency (1 minute) ensures your tabs close exactly when you want them to.
 - Lightweight: Uses native browser APIs without draining your battery or hogging your CPU.
 - Privacy First: 100% offline. No browsing data or URLs are ever sent to external servers.
 
@@ -44,6 +47,9 @@ Ist dein Browser ständig überfüllt mit Dutzenden von Tabs, die du "später" l
 - Master Toggle: Pausiere die Erweiterung jederzeit direkt in den Einstellungen.
 - Überlebt Neustarts: TickTab speichert die Tab-Aktivität lokal, sodass Timer auch nach einem Neustart weiterlaufen.
 - Intelligente Ausnahmen: Der aktuelle, angepinnte oder Audio/Video abspielende Tabs werden nie geschlossen.
+- Intelligentes Aufräumen: Schließe alle inaktiven Tabs mit einem Klick aus dem Pop-up, ohne geschützte Tabs zu verlieren.
+- Sortierbare Liste: Ordne Tabs nach Alter (aufsteigend/absteigend) für bessere Übersicht.
+- Schnelles Reagieren: Prüfintervall auf 1 Minute verkürzt für präzises Aufräumen auch bei kurzen Zeitspannen.
 - Ressourcenschonend: Nutzt native Browser-APIs, ohne den Akku oder die CPU zu belasten.
 - Datenschutz: 100 % offline. Kein Browserverlauf wird jemals an externe Server gesendet.
 
@@ -65,6 +71,9 @@ TickTab es una extensión inteligente y centrada en la privacidad que cierra aut
 - Interruptor principal: Pausa la extensión rápidamente en cualquier momento a través del menú de opciones.
 - Resistente a reinicios: Los temporizadores se guardan localmente y sobreviven a bloqueos del navegador.
 - Excepciones inteligentes: Nunca cierra la pestaña activa, fijadas o las que reproducen audio/vídeo.
+- Inteligente: Cierra todas las pestañas inactivas con un clic mientras mantienes seguras tus pestañas fijadas y de medios.
+- Lista ajustable: Organiza las pestañas por antigüedad (ascendente/descendente) para encontrar lo que necesitas más rápido.
+- Más rápido: Frecuencia de comprobación aumentada (1 minuto) garantiza que tus pestañas se cierren exactamente cuando lo desees.
 - Ligero: Utiliza APIs nativas para no agotar la batería ni la CPU.
 - Privacidad Primero: Funciona 100% sin conexión. Nunca envía tus datos de navegación.
 
@@ -86,6 +95,9 @@ TickTab est une extension intelligente qui ferme automatiquement les onglets que
 - Interrupteur principal : Mettez rapidement l'extension en pause à tout moment depuis le menu des options.
 - Résiste aux redémarrages : Les minuteries survivent aux crashs grâce au stockage local.
 - Exceptions intelligentes : Ne ferme jamais l'onglet actif, les onglets épinglés ou ceux qui lisent de l'audio.
+- Nettoyage intelligent : Fermez instantanément tous les onglets inactifs en un clic tout en préservant vos onglets épinglés et multimédias.
+- Liste triable : Organisez les onglets par ancienneté (croissant/décroissant) pour trouver plus rapidement ce dont vous avez besoin.
+- Plus rapide : Fréquence de vérification augmentée (1 minute) garantit que vos onglets se ferment exactement quand vous le souhaitez.
 - Léger : N'épuise pas ta batterie et n'utilise pas ta CPU inutilement.
 - La vie privée avant tout : Fonctionne 100 % hors ligne sans transmettre tes données.
 
@@ -107,6 +119,9 @@ TickTab é uma extensão inteligente que fecha automaticamente abas que você n�
 - Botão Mestre: Pause rapidamente a extensão a qualquer momento pelo menu de opções.
 - Resistente a reinicializações: Os cronômetros são salvos localmente e não são perdidos.
 - Exceções inteligentes: Nunca fecha a aba ativa atual, abas fixadas ou as que reproduzem áudio.
+- Limpeza Inteligente: feche instantaneamente todas as abas inativas com um clique, mantendo suas abas fixadas e de mídia seguras.
+- Lista Ordenável: organize as abas por idade (ascendente/descendente) para encontrar o que você precisa mais rápido.
+- Limpeza mais Rápida: a frequência de verificação aumentada (1 minuto) garante que suas abas fechem exatamente quando você desejar.
 - Leve: Não consome a bateria nem a CPU usando APIs nativas.
 - Privacidade: Funciona 100% offline. Nenhum histórico de navegação é enviado.
 
@@ -128,6 +143,9 @@ TickTab 是一个智能且注重隐私的扩展，它可以自动清理你很久
 - 主开关: 可随时通过选项菜单快速暂停扩展功能。
 - 重启不丢失计时: 利用本地存储功能，即使浏览器崩溃也不会重置计时器。
 - 智能例外规则: 永远不会关闭你当前正在查看的标签页、已固定的标签页或正在播放音频的网站。
+- 智能清理: 一键关闭所有非活动标签页，同时保持固定标签页和媒体播放标签页安全。
+- 可排序列表: 按时间（升序/降序）排列标签页，更快找到所需内容。
+- 更快清理: 检查频率提高至 1 分钟，确保标签页在您设定的时间准时关闭。
 - 轻量化运行: 使用原生接口，不耗费电量或 CPU。
 - 隐私至上: 100% 离线工作，绝不上传你的浏览记录。
 
@@ -149,5 +167,8 @@ TickTabは、しばらく見ていないタブを自動的に閉じる、スマ�
 - マスタートグル: オプションメニューからいつでも拡張機能を一時停止できます。
 - 再起動に対応: 終了タイマーはローカルストレージに保存されるため、クラッシュしても安心です。
 - 特定のタブを保護: 現在開いているタブ、ピン留めされたタブ、または音声を再生しているタブは決して閉じられません。
+- スマートクリーンアップ: 1クリックで非アクティブなタブをすべて閉じます。ピン留めされたタブやメディア再生中のタブは保護されます。
+- 並び替え可能なリスト: タブを時間順（昇順/降順）に並べ替えて、必要なタブをすぐに見つけることができます。
+- 高速クリーンアップ: チェック頻度を1分に短縮し、設定した時間に正確にタブを閉じます。
 - 軽量: ネイティブAPIを使用し、バッテリーやCPUを消耗しません。
 - プライバシー第一: 100% オフラインで動作し、閲覧データは送信されません。

@@ -96,9 +96,12 @@
     "message": "たった今"
   },
   "popupCloseStale": {
-    "message": "古いタブを閉じる"
+    "message": "すべての非アクティブなタブをクリーンアップ"
   },
   "popupCloseTab": {
     "message": "タブを閉じる"
+  },
+  "popupSortTitle": {
+    "message": "並び替え順序を切り替え"
   }
 }

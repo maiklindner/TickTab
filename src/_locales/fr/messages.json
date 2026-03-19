@@ -96,9 +96,12 @@
     "message": "À l'instant"
   },
   "popupCloseStale": {
-    "message": "Fermer les onglets inactifs"
+    "message": "Nettoyer tous les onglets inactifs"
   },
   "popupCloseTab": {
     "message": "Fermer l'onglet"
+  },
+  "popupSortTitle": {
+    "message": "Changer l'ordre de tri"
   }
 }

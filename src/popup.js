@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('cleanTabsBtn').addEventListener('click', async () => {
-        chrome.runtime.sendMessage({ action: 'checkAndClose', isManual: true }, () => {
+        chrome.runtime.sendMessage({ action: 'nukeInactive' }, () => {
             setTimeout(renderTabs, 500);
         });
     });

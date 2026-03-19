@@ -96,9 +96,12 @@
     "message": "Agora mesmo"
   },
   "popupCloseStale": {
-    "message": "Fechar abas inativas"
+    "message": "Limpar todas as abas inativas"
   },
   "popupCloseTab": {
     "message": "Fechar aba"
+  },
+  "popupSortTitle": {
+    "message": "Alterar ordem de classificação"
   }
 }

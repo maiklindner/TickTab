@@ -96,9 +96,12 @@
     "message": "刚刚"
   },
   "popupCloseStale": {
-    "message": "关闭过期的标签页"
+    "message": "清理所有非活动标签页"
   },
   "popupCloseTab": {
     "message": "关闭标签页"
+  },
+  "popupSortTitle": {
+    "message": "切换排序顺序"
   }
 }

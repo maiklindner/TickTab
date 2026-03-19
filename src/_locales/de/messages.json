@@ -96,7 +96,7 @@
     "message": "Gerade aktiv"
   },
   "popupCloseStale": {
-    "message": "Inaktive Tabs schließen"
+    "message": "Alle inaktiven Tabs aufräumen"
   },
   "popupCloseTab": {
     "message": "Tab schließen"
