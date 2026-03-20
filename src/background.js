@@ -85,41 +85,43 @@ async function checkAndCloseTickTabs(isManual = false) {
     const tabs = await chrome.tabs.query({});
     let closedCount = 0;
 
+    const tabsToClose = [];
+
     for (const tab of tabs) {
         // === EXCEPTIONS ===
-        if (tab.active) continue; // The currently active tab must not be closed
-        if (tab.pinned) continue; // Ignore pinned tabs
-        if (tab.audible) continue; // Ignore tabs currently playing sound (e.g. music, video)
-        if (!tab.url || tab.url.startsWith('chrome://') || tab.url.startsWith('edge://') || tab.url.startsWith('about:')) continue; // Ignore internal pages
+        if (tab.active) continue;
+        if (tab.pinned) continue;
+        if (tab.audible) continue;
+        if (!tab.url || tab.url.startsWith('chrome://') || tab.url.startsWith('edge://') || tab.url.startsWith('about:')) continue;
 
         const key = `tab_${tab.url}`;
         const storageData = await chrome.storage.local.get([key]);
         const lastActive = storageData[key];
 
         if (!lastActive) {
-            // Missed internally, e.g. browser crashed too early.
-            // Stamp it now and leave it alone this time.
             await updateTabTimestamp(tab.url);
             continue;
         }
 
         if (now - lastActive > expirationMs) {
-            const historyLimit = await getHistoryLimit();
-            await addToHistory(tab, historyLimit);
+            tabsToClose.push(tab);
+        }
+    }
 
-            console.log(`[TickTab] Closing inactive tab: ${tab.url} (Inactive for > ${expirationMinutes} minutes)`);
-            
-            try {
-                await chrome.tabs.remove(tab.id);
-                // Remove from storage
-                chrome.storage.local.remove(key);
-                closedCount++;
-                
-                // Small delay to prevent "swarming" the OS with window changes
-                await new Promise(r => setTimeout(r, 200));
-            } catch (e) {
-                console.error("[TickTab] Error closing tab", e);
-            }
+    if (tabsToClose.length > 0) {
+        const historyLimit = await getHistoryLimit();
+        await addBatchToHistory(tabsToClose, historyLimit);
+
+        const tabIds = tabsToClose.map(t => t.id);
+        const storageKeys = tabsToClose.map(t => `tab_${t.url}`);
+        
+        try {
+            console.log(`[TickTab] Batch closing ${tabsToClose.length} tabs...`);
+            await chrome.tabs.remove(tabIds);
+            chrome.storage.local.remove(storageKeys);
+            closedCount = tabsToClose.length;
+        } catch (e) {
+            console.error("[TickTab] Error during batch removal", e);
         }
     }
 
@@ -135,6 +137,8 @@ async function nukeInactiveTabs() {
     const historyLimit = await getHistoryLimit();
     let closedCount = 0;
 
+    const tabsToClose = [];
+
     for (const tab of tabs) {
         // === EXCEPTIONS ===
         if (tab.active) continue;
@@ -142,46 +146,50 @@ async function nukeInactiveTabs() {
         if (tab.audible) continue;
         if (!tab.url || tab.url.startsWith('chrome://') || tab.url.startsWith('edge://') || tab.url.startsWith('about:')) continue;
 
-        const key = `tab_${tab.url}`;
-        
-        await addToHistory(tab, historyLimit);
-        
+        tabsToClose.push(tab);
+    }
+
+    if (tabsToClose.length > 0) {
+        const historyLimit = await getHistoryLimit();
+        await addBatchToHistory(tabsToClose, historyLimit);
+
+        const tabIds = tabsToClose.map(t => t.id);
+        const storageKeys = tabsToClose.map(t => `tab_${t.url}`);
+
         try {
-            await chrome.tabs.remove(tab.id);
-            // Remove from storage
-            chrome.storage.local.remove(key);
-            closedCount++;
-            
-            // Wait slightly between removals to keep the UI smooth
-            await new Promise(r => setTimeout(r, 100));
+            console.log(`[TickTab] Nuke: Batch closing ${tabsToClose.length} tabs...`);
+            await chrome.tabs.remove(tabIds);
+            chrome.storage.local.remove(storageKeys);
+            closedCount = tabsToClose.length;
         } catch (e) {
-            console.error("[TickTab] Error nuking tab", e);
+            console.error("[TickTab] Error during nuke batch removal", e);
         }
     }
 
     showManualFeedback(closedCount);
 }
 
-async function addToHistory(tab, maxLimit) {
-    if (maxLimit <= 0) return;
+async function addBatchToHistory(tabs, maxLimit) {
+    if (maxLimit <= 0 || !tabs || tabs.length === 0) return;
 
     try {
         const res = await chrome.storage.local.get(['closedTabsHistory']);
         let history = res.closedTabsHistory || [];
-        console.log(`[TickTab] addToHistory: Adding ${tab.url}. Current history size: ${history.length}, Max: ${maxLimit}`);
-
-        const historyItem = {
+        
+        const now = Date.now();
+        const newItems = tabs.map(tab => ({
             url: tab.url,
             title: tab.title || "Untitled Tab",
             favIconUrl: tab.favIconUrl || "",
-            closedAt: Date.now()
-        };
+            closedAt: now
+        }));
 
-        // Avoid duplicates
-        history = history.filter(item => item.url !== tab.url);
+        // Combine and filter out duplicates (keeping newest)
+        const newUrls = new Set(newItems.map(i => i.url));
+        history = history.filter(item => !newUrls.has(item.url));
         
-        // Add to front
-        history.unshift(historyItem);
+        // Add new items to front
+        history = [...newItems.reverse(), ...history];
 
         // Truncate
         if (history.length > maxLimit) {
@@ -189,9 +197,9 @@ async function addToHistory(tab, maxLimit) {
         }
 
         await chrome.storage.local.set({ closedTabsHistory: history });
-        console.log(`[TickTab] History updated. New size: ${history.length}`);
+        console.log(`[TickTab] History batch updated. New size: ${history.length}`);
     } catch (err) {
-        console.error("[TickTab] Fatal error in addToHistory:", err);
+        console.error("[TickTab] Fatal error in addBatchToHistory:", err);
     }
 }
 
