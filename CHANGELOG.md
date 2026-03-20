@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.0] - 2026-03-20
+
+### Added
+- **Recently Closed History**: New history view for restoring tabs closed by TickTab.
+- **View Persistence**: The popup now remembers your last active view (Active or History).
+- **Independent Sorting**: Separate sorting preferences for active tabs and closed history.
+- **UI Modernization**: Complete redesign with a sleek segmented control and a cleaner, "airy" layout.
+- **Action Color Coding**: Green hover effects for restore actions vs red for closing actions.
+
+### Changed
+- **Focus Preservation**: Switched to atomic batch removal of tabs to prevent focus-stealing on macOS.
+- **Refined Transitions**: Suppressed sliding animations on startup for a snappier feel.
+
+### Fixed
+- **History Reliability**: Resolved race conditions and data structure issues in tab history tracking.
+
 ## [1.4.0] - 2026-03-19
 
 ### Added
