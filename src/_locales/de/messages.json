@@ -64,5 +64,80 @@
   },
   "optionsPlaceholderMinutes": {
     "message": "z.B. 60"
+  },
+  "popupNoInactive": {
+    "message": "Keine inaktiven Tabs erfasst."
+  },
+  "popupAgeMinutes": {
+    "message": "Vor $mins$m aktiv",
+    "placeholders": {
+      "mins": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeHours": {
+    "message": "Vor $hours$h aktiv",
+    "placeholders": {
+      "hours": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeDays": {
+    "message": "Vor $days$d aktiv",
+    "placeholders": {
+      "days": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeJustNow": {
+    "message": "Gerade aktiv"
+  },
+  "popupCloseStale": {
+    "message": "Alle inaktiven Tabs aufräumen"
+  },
+  "popupCloseTab": {
+    "message": "Tab schließen"
+  },
+  "popupSortTitle": {
+    "message": "Sortierung ändern"
+  },
+  "popupTabActive": {
+    "message": "Aktiv"
+  },
+  "popupTabHistory": {
+    "message": "Verlauf"
+  },
+  "popupNoHistory": {
+    "message": "Noch kein Verlauf vorhanden."
+  },
+  "popupRestoreTab": {
+    "message": "Wiederherstellen"
+  },
+  "popupHistoryAgeMinutes": {
+    "message": "Vor $mins$m geschlossen",
+    "placeholders": {
+      "mins": { "content": "$1" }
+    }
+  },
+  "popupHistoryAgeHours": {
+    "message": "Vor $hours$h geschlossen",
+    "placeholders": {
+      "hours": { "content": "$1" }
+    }
+  },
+  "popupHistoryAgeDays": {
+    "message": "Vor $days$d geschlossen",
+    "placeholders": {
+      "days": { "content": "$1" }
+    }
+  },
+  "optionsHistoryLimitTitle": {
+    "message": "Verlaufslimit"
+  },
+  "optionsHistoryLimitDesc": {
+    "message": "Anzahl der automatisch geschlossenen Tabs, die im Verlauf behalten werden."
   }
 }

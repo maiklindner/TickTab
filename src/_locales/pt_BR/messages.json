@@ -64,5 +64,80 @@
   },
   "optionsPlaceholderMinutes": {
     "message": "ex. 60"
+  },
+  "popupNoInactive": {
+    "message": "Nenhuma aba inativa rastreada."
+  },
+  "popupAgeMinutes": {
+    "message": "Há $mins$m",
+    "placeholders": {
+      "mins": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeHours": {
+    "message": "Há $hours$h",
+    "placeholders": {
+      "hours": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeDays": {
+    "message": "Há $days$d",
+    "placeholders": {
+      "days": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeJustNow": {
+    "message": "Agora mesmo"
+  },
+  "popupCloseStale": {
+    "message": "Limpar todas as abas inativas"
+  },
+  "popupCloseTab": {
+    "message": "Fechar aba"
+  },
+  "popupSortTitle": {
+    "message": "Alterar ordem de classificação"
+  },
+  "popupTabActive": {
+    "message": "Ativas"
+  },
+  "popupTabHistory": {
+    "message": "Histórico"
+  },
+  "popupNoHistory": {
+    "message": "Nenhum histórico ainda."
+  },
+  "popupRestoreTab": {
+    "message": "Restaurar"
+  },
+  "popupHistoryAgeMinutes": {
+    "message": "Fechado há $mins$m",
+    "placeholders": {
+      "mins": { "content": "$1" }
+    }
+  },
+  "popupHistoryAgeHours": {
+    "message": "Fechado há $hours$h",
+    "placeholders": {
+      "hours": { "content": "$1" }
+    }
+  },
+  "popupHistoryAgeDays": {
+    "message": "Fechado há $days$d",
+    "placeholders": {
+      "days": { "content": "$1" }
+    }
+  },
+  "optionsHistoryLimitTitle": {
+    "message": "Limite do histórico"
+  },
+  "optionsHistoryLimitDesc": {
+    "message": "Número de abas fechadas automaticamente para manter no histórico."
   }
 }

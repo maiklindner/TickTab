@@ -64,5 +64,65 @@
   },
   "optionsPlaceholderMinutes": {
     "message": "par ex. 60"
+  },
+  "popupNoInactive": {
+    "message": "Aucun onglet inactif suivi."
+  },
+  "popupAgeMinutes": {
+    "message": "Il y a $mins$ min",
+    "placeholders": {
+      "mins": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeHours": {
+    "message": "Il y a $hours$ h",
+    "placeholders": {
+      "hours": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeDays": {
+    "message": "Il y a $days$ j",
+    "placeholders": {
+      "days": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeJustNow": {
+    "message": "À l'instant"
+  },
+  "popupCloseStale": {
+    "message": "Nettoyer tous les onglets inactifs"
+  },
+  "popupCloseTab": {
+    "message": "Fermer l'onglet"
+  },
+  "popupSortTitle": {
+    "message": "Changer l'ordre de tri"
+  },
+  "popupTabActive": {
+    "message": "Actifs"
+  },
+  "popupTabHistory": {
+    "message": "Historique"
+  },
+  "popupNoHistory": {
+    "message": "Pas encore d'historique."
+  },
+  "popupRestoreTab": {
+    "message": "Restaurer"
+  },
+  "popupClosedSuffix": {
+    "message": "auparavant"
+  },
+  "optionsHistoryLimitTitle": {
+    "message": "Limite de l'historique"
+  },
+  "optionsHistoryLimitDesc": {
+    "message": "Nombre d'onglets fermés automatiquement à conserver dans l'historique."
   }
 }

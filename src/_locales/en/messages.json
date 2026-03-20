@@ -64,5 +64,80 @@
   },
   "optionsPlaceholderMinutes": {
     "message": "e.g. 60"
+  },
+  "popupNoInactive": {
+    "message": "No inactive tabs tracked."
+  },
+  "popupAgeMinutes": {
+    "message": "$mins$m ago",
+    "placeholders": {
+      "mins": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeHours": {
+    "message": "$hours$h ago",
+    "placeholders": {
+      "hours": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeDays": {
+    "message": "$days$d ago",
+    "placeholders": {
+      "days": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeJustNow": {
+    "message": "Just now"
+  },
+  "popupCloseStale": {
+    "message": "Clean All Inactive Tabs"
+  },
+  "popupCloseTab": {
+    "message": "Close Tab"
+  },
+  "popupSortTitle": {
+    "message": "Toggle Sort Order"
+  },
+  "popupTabActive": {
+    "message": "Active"
+  },
+  "popupTabHistory": {
+    "message": "History"
+  },
+  "popupNoHistory": {
+    "message": "No history yet."
+  },
+  "popupRestoreTab": {
+    "message": "Restore"
+  },
+  "popupHistoryAgeMinutes": {
+    "message": "Closed $mins$m ago",
+    "placeholders": {
+      "mins": { "content": "$1" }
+    }
+  },
+  "popupHistoryAgeHours": {
+    "message": "Closed $hours$h ago",
+    "placeholders": {
+      "hours": { "content": "$1" }
+    }
+  },
+  "popupHistoryAgeDays": {
+    "message": "Closed $days$d ago",
+    "placeholders": {
+      "days": { "content": "$1" }
+    }
+  },
+  "optionsHistoryLimitTitle": {
+    "message": "History Limit"
+  },
+  "optionsHistoryLimitDesc": {
+    "message": "Number of auto-closed tabs to keep in the history."
   }
 }

@@ -49,6 +49,8 @@ function localizeHtmlPage() {
     }
     document.getElementById('enableTitle').textContent = getMessage("optionsEnableTitle") || "Enable TickTab";
     document.getElementById('enableDesc').textContent = getMessage("optionsEnableDesc") || "Toggle whether inactive tabs should be closed automatically.";
+    document.getElementById('historyLimitTitle').textContent = getMessage("optionsHistoryLimitTitle") || "History Limit";
+    document.getElementById('historyLimitDesc').textContent = getMessage("optionsHistoryLimitDesc") || "Number of auto-closed tabs to keep in the history.";
     document.getElementById('customMinutes').placeholder = getMessage("optionsPlaceholderMinutes") || "e.g. 60";
     document.title = getMessage("extName");
 }
@@ -68,9 +70,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const unitSelect = document.getElementById('unitSelect');
     const masterToggle = document.getElementById('masterToggle');
 
+    const historyLimitInput = document.getElementById('historyLimit');
+
     // Load saved settings
-    chrome.storage.local.get(['expirationMinutes', 'enabled'], (result) => {
+    chrome.storage.local.get(['expirationMinutes', 'enabled', 'historyLimit'], (result) => {
         masterToggle.checked = result.enabled !== false; // default true
+        historyLimitInput.value = result.historyLimit !== undefined ? result.historyLimit : 10;
+        
         const savedMinutes = result.expirationMinutes || 10080; // default 1 week
 
         // Check if it matches a preset
@@ -117,7 +123,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     masterToggle.addEventListener('change', () => {
-        chrome.storage.local.set({ enabled: masterToggle.checked });
+        chrome.storage.local.set({ enabled: masterToggle.checked }, () => {
+            // Trigger background check if enabled
+            if (masterToggle.checked) {
+                chrome.runtime.sendMessage({ action: 'checkAndClose', isManual: false });
+            }
+        });
+    });
+
+    historyLimitInput.addEventListener('change', (e) => {
+        let historyLimit = parseInt(e.target.value, 10);
+        if (isNaN(historyLimit) || historyLimit < 1) historyLimit = 1;
+        if (historyLimit > 100) historyLimit = 100;
+        historyLimitInput.value = historyLimit;
+        chrome.storage.local.set({ historyLimit });
     });
 
     function saveSettings() {
@@ -134,7 +153,10 @@ document.addEventListener('DOMContentLoaded', () => {
             minutesToSave = parseInt(timeSelect.value, 10);
         }
 
-        chrome.storage.local.set({ expirationMinutes: minutesToSave });
+        chrome.storage.local.set({ expirationMinutes: minutesToSave }, () => {
+            // Trigger background check to apply new timing immediately
+            chrome.runtime.sendMessage({ action: 'checkAndClose', isManual: false });
+        });
     }
 
     // Auto-save on input typing for custom value

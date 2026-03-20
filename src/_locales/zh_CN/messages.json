@@ -64,5 +64,80 @@
   },
   "optionsPlaceholderMinutes": {
     "message": "例如 60"
+  },
+  "popupNoInactive": {
+    "message": "没有追踪到非活动标签页。"
+  },
+  "popupAgeMinutes": {
+    "message": "$mins$ 分钟前",
+    "placeholders": {
+      "mins": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeHours": {
+    "message": "$hours$ 小时前",
+    "placeholders": {
+      "hours": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeDays": {
+    "message": "$days$ 天前",
+    "placeholders": {
+      "days": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupAgeJustNow": {
+    "message": "刚刚"
+  },
+  "popupCloseStale": {
+    "message": "清理所有非活动标签页"
+  },
+  "popupCloseTab": {
+    "message": "关闭标签页"
+  },
+  "popupSortTitle": {
+    "message": "切换排序顺序"
+  },
+  "popupTabActive": {
+    "message": "活动中"
+  },
+  "popupTabHistory": {
+    "message": "历史记录"
+  },
+  "popupNoHistory": {
+    "message": "暂无历史记录。"
+  },
+  "popupRestoreTab": {
+    "message": "恢复"
+  },
+  "popupHistoryAgeMinutes": {
+    "message": "$mins$ 分钟前关闭",
+    "placeholders": {
+      "mins": { "content": "$1" }
+    }
+  },
+  "popupHistoryAgeHours": {
+    "message": "$hours$ 小时前关闭",
+    "placeholders": {
+      "hours": { "content": "$1" }
+    }
+  },
+  "popupHistoryAgeDays": {
+    "message": "$days$ 天前关闭",
+    "placeholders": {
+      "days": { "content": "$1" }
+    }
+  },
+  "optionsHistoryLimitTitle": {
+    "message": "历史记录上限"
+  },
+  "optionsHistoryLimitDesc": {
+    "message": "要在历史记录中保留的自动关闭标签页的数量。"
   }
 }

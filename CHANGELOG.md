@@ -2,6 +2,45 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.0] - 2026-03-20
+
+### Added
+- **Recently Closed History**: New history view for restoring tabs closed by TickTab.
+- **View Persistence**: The popup now remembers your last active view (Active or History).
+- **Independent Sorting**: Separate sorting preferences for active tabs and closed history.
+- **UI Modernization**: Complete redesign with a sleek segmented control and a cleaner, "airy" layout.
+- **Action Color Coding**: Green hover effects for restore actions vs red for closing actions.
+
+### Changed
+- **Focus Preservation**: Switched to atomic batch removal of tabs to prevent focus-stealing on macOS.
+- **Refined Transitions**: Suppressed sliding animations on startup for a snappier feel.
+
+### Fixed
+- **History Reliability**: Resolved race conditions and data structure issues in tab history tracking.
+
+## [1.4.0] - 2026-03-19
+
+### Added
+- **Sort Options**: Toggle between ascending (oldest first) and descending (newest first) tab sorting in the popup.
+- **Persistent Settings**: Your preferred sort order is now saved across sessions.
+
+### Changed
+- **Smart Nuke**: The "Trash Can" button now closes all inactive tabs instantly while preserving pinned and media-playing tabs.
+- **Faster Cleanup**: Increased the background check frequency to 1 minute for better responsiveness with short timers.
+- **Instant Feedback**: Changing auto-close settings now triggers an immediate cleanup check.
+
+### Fixed
+- **Sorting Logic**: Active tabs are now consistently handled as "Just now" in the list.
+- **Popup Stability**: Resolved an intermittent `TypeError` when re-rendering the tab list.
+
+## [1.3.0] - 2026-03-19
+
+### Added
+- **Management Popup**: A new interactive popup to visualize and manage tab expiration.
+- **Tab Life-Tracker**: Real-time display of how long each open tab has been inactive.
+- **Manual Cleanup**: Options to close individual tabs or all stale tabs directly from the popup.
+- **Improved UX**: Redesigned the extension icon action to provide more transparency and control.
+
 ## [1.2.2] - 2026-03-18
 
 ### Added
