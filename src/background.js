@@ -47,12 +47,15 @@ chrome.runtime.onInstalled.addListener(() => {
     chrome.alarms.create(ALARM_NAME, { periodInMinutes: 1 });
 
     // Set default values if not exists
-    chrome.storage.local.get(['expirationMinutes', 'enabled'], (res) => {
+    chrome.storage.local.get(['expirationMinutes', 'enabled', 'closedTabsHistory'], (res) => {
         if (!res.expirationMinutes) {
             chrome.storage.local.set({ expirationMinutes: DEFAULT_EXPIRATION_MINUTES });
         }
         if (res.enabled === undefined) {
             chrome.storage.local.set({ enabled: true });
+        }
+        if (!res.closedTabsHistory || !Array.isArray(res.closedTabsHistory)) {
+            chrome.storage.local.set({ closedTabsHistory: [] });
         }
     });
 
@@ -101,12 +104,22 @@ async function checkAndCloseTickTabs(isManual = false) {
         }
 
         if (now - lastActive > expirationMs) {
-            console.log(`[TickTab] Closing inactive tab: ${tab.url} (Inactive for > ${expirationMinutes} minutes)`);
-            chrome.tabs.remove(tab.id).catch(e => console.error("Error closing tab", e));
+            const historyLimit = await getHistoryLimit();
+            await addToHistory(tab, historyLimit);
 
-            // Remove from storage
-            chrome.storage.local.remove(key);
-            closedCount++;
+            console.log(`[TickTab] Closing inactive tab: ${tab.url} (Inactive for > ${expirationMinutes} minutes)`);
+            
+            try {
+                await chrome.tabs.remove(tab.id);
+                // Remove from storage
+                chrome.storage.local.remove(key);
+                closedCount++;
+                
+                // Small delay to prevent "swarming" the OS with window changes
+                await new Promise(r => setTimeout(r, 200));
+            } catch (e) {
+                console.error("[TickTab] Error closing tab", e);
+            }
         }
     }
 
@@ -119,6 +132,7 @@ async function checkAndCloseTickTabs(isManual = false) {
 // Function for "Smart Nuke": Closes ALL inactive tabs (non-pinned, non-audible)
 async function nukeInactiveTabs() {
     const tabs = await chrome.tabs.query({});
+    const historyLimit = await getHistoryLimit();
     let closedCount = 0;
 
     for (const tab of tabs) {
@@ -129,14 +143,63 @@ async function nukeInactiveTabs() {
         if (!tab.url || tab.url.startsWith('chrome://') || tab.url.startsWith('edge://') || tab.url.startsWith('about:')) continue;
 
         const key = `tab_${tab.url}`;
-        chrome.tabs.remove(tab.id).catch(e => console.error("Error nuking tab", e));
-
-        // Remove from storage
-        chrome.storage.local.remove(key);
-        closedCount++;
+        
+        await addToHistory(tab, historyLimit);
+        
+        try {
+            await chrome.tabs.remove(tab.id);
+            // Remove from storage
+            chrome.storage.local.remove(key);
+            closedCount++;
+            
+            // Wait slightly between removals to keep the UI smooth
+            await new Promise(r => setTimeout(r, 100));
+        } catch (e) {
+            console.error("[TickTab] Error nuking tab", e);
+        }
     }
 
     showManualFeedback(closedCount);
+}
+
+async function addToHistory(tab, maxLimit) {
+    if (maxLimit <= 0) return;
+
+    try {
+        const res = await chrome.storage.local.get(['closedTabsHistory']);
+        let history = res.closedTabsHistory || [];
+        console.log(`[TickTab] addToHistory: Adding ${tab.url}. Current history size: ${history.length}, Max: ${maxLimit}`);
+
+        const historyItem = {
+            url: tab.url,
+            title: tab.title || "Untitled Tab",
+            favIconUrl: tab.favIconUrl || "",
+            closedAt: Date.now()
+        };
+
+        // Avoid duplicates
+        history = history.filter(item => item.url !== tab.url);
+        
+        // Add to front
+        history.unshift(historyItem);
+
+        // Truncate
+        if (history.length > maxLimit) {
+            history = history.slice(0, maxLimit);
+        }
+
+        await chrome.storage.local.set({ closedTabsHistory: history });
+        console.log(`[TickTab] History updated. New size: ${history.length}`);
+    } catch (err) {
+        console.error("[TickTab] Fatal error in addToHistory:", err);
+    }
+}
+
+async function getHistoryLimit() {
+    const res = await chrome.storage.local.get(['historyLimit']);
+    let limit = parseInt(res.historyLimit, 10);
+    if (isNaN(limit)) return 10;
+    return Math.max(1, Math.min(limit, 100)); // Ensure at least 1
 }
 
 function showManualFeedback(closedCount) {
@@ -167,6 +230,18 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === 'nukeInactive') {
         nukeInactiveTabs().then(() => {
             sendResponse({ success: true });
+        });
+        return true;
+    }
+    if (request.action === 'restoreTab') {
+        chrome.tabs.create({ url: request.url });
+        
+        // Remove from history
+        chrome.storage.local.get(['closedTabsHistory'], (res) => {
+            const history = (res.closedTabsHistory || []).filter(item => item.url !== request.url);
+            chrome.storage.local.set({ closedTabsHistory: history }, () => {
+                sendResponse({ success: true });
+            });
         });
         return true;
     }

@@ -23,12 +23,31 @@
         </div>
     </div>
 
-    <div class="content">
-        <div id="tabList" class="tabs-list">
-            <!-- Tabs will be injected here -->
+    <div class="nav-container">
+        <div class="segmented-control">
+            <div id="navSlider" class="nav-slider"></div>
+            <button id="activeTabBtn" class="nav-btn active" data-i18n="popupTabActive">Active</button>
+            <button id="historyTabBtn" class="nav-btn" data-i18n="popupTabHistory">History</button>
         </div>
-        <div id="noTabsMsg" class="empty-state hidden">
-            <p id="noInactiveLoc">No inactive tabs tracked.</p>
+    </div>
+
+    <div class="content">
+        <div id="activeView" class="view active">
+            <div id="tabList" class="tabs-list">
+                <!-- Active tabs injected here -->
+            </div>
+            <div id="noTabsMsg" class="empty-state hidden">
+                <p id="noInactiveLoc" data-i18n="popupNoInactive">No inactive tabs tracked.</p>
+            </div>
+        </div>
+
+        <div id="historyView" class="view">
+            <div id="historyList" class="tabs-list">
+                <!-- History items injected here -->
+            </div>
+            <div id="noHistoryMsg" class="empty-state hidden">
+                <p id="noHistoryLoc" data-i18n="popupNoHistory">No history yet.</p>
+            </div>
         </div>
     </div>
 

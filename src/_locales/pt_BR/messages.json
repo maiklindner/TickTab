@@ -103,5 +103,41 @@
   },
   "popupSortTitle": {
     "message": "Alterar ordem de classificação"
+  },
+  "popupTabActive": {
+    "message": "Ativas"
+  },
+  "popupTabHistory": {
+    "message": "Histórico"
+  },
+  "popupNoHistory": {
+    "message": "Nenhum histórico ainda."
+  },
+  "popupRestoreTab": {
+    "message": "Restaurar"
+  },
+  "popupHistoryAgeMinutes": {
+    "message": "Fechado há $mins$m",
+    "placeholders": {
+      "mins": { "content": "$1" }
+    }
+  },
+  "popupHistoryAgeHours": {
+    "message": "Fechado há $hours$h",
+    "placeholders": {
+      "hours": { "content": "$1" }
+    }
+  },
+  "popupHistoryAgeDays": {
+    "message": "Fechado há $days$d",
+    "placeholders": {
+      "days": { "content": "$1" }
+    }
+  },
+  "optionsHistoryLimitTitle": {
+    "message": "Limite do histórico"
+  },
+  "optionsHistoryLimitDesc": {
+    "message": "Número de abas fechadas automaticamente para manter no histórico."
   }
 }

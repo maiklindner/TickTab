@@ -103,5 +103,26 @@
   },
   "popupSortTitle": {
     "message": "Changer l'ordre de tri"
+  },
+  "popupTabActive": {
+    "message": "Actifs"
+  },
+  "popupTabHistory": {
+    "message": "Historique"
+  },
+  "popupNoHistory": {
+    "message": "Pas encore d'historique."
+  },
+  "popupRestoreTab": {
+    "message": "Restaurer"
+  },
+  "popupClosedSuffix": {
+    "message": "auparavant"
+  },
+  "optionsHistoryLimitTitle": {
+    "message": "Limite de l'historique"
+  },
+  "optionsHistoryLimitDesc": {
+    "message": "Nombre d'onglets fermés automatiquement à conserver dans l'historique."
   }
 }

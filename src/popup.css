@@ -4,8 +4,8 @@
   --text-color: #1f2937;
   --label-color: #4b5563;
   --border-color: #e5e7eb;
-  --primary-color: #f59e0b; /* Amber/Yellow for TickTab */
-  --primary-hover-color: #d97706;
+  --primary-color: #2563eb; /* Modern Clean Blue */
+  --primary-hover-color: #1d4ed8;
   --hover-bg: #f3f4f6;
   --danger-color: #ef4444;
 }
@@ -17,8 +17,8 @@
     --text-color: #f9fafb;
     --label-color: #9ca3af;
     --border-color: #374151;
-    --primary-color: #fbbf24;
-    --primary-hover-color: #f59e0b;
+    --primary-color: #60a5fa; /* Light Blue for dark mode */
+    --primary-hover-color: #3b82f6;
     --hover-bg: #374151;
   }
 }
@@ -39,9 +39,60 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 16px;
-  border-bottom: 1px solid var(--border-color);
+  padding: 16px 20px;
   background-color: var(--card-bg-color);
+}
+
+.nav-container {
+  padding: 8px 16px 4px 16px;
+  background-color: var(--card-bg-color);
+}
+
+.segmented-control {
+  position: relative;
+  display: flex;
+  background-color: var(--hover-bg);
+  border-radius: 10px;
+  padding: 3px;
+  height: 32px;
+  align-items: center;
+}
+
+.nav-slider {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
+  height: calc(100% - 6px);
+  background-color: var(--card-bg-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.nav-btn {
+  position: relative;
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 0;
+  height: 100%;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--label-color);
+  transition: color 0.2s;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-btn.active {
+  color: var(--primary-color);
+  font-weight: 600;
 }
 
 h1 {
@@ -76,6 +127,7 @@ h1 {
 .content {
   overflow-y: auto;
   flex-grow: 1;
+  padding-bottom: 12px;
 }
 
 .tabs-list {
@@ -86,10 +138,11 @@ h1 {
 .tab-item {
   display: flex;
   align-items: center;
-  padding: 10px 16px;
-  border-bottom: 1px solid var(--border-color);
+  padding: 6px 10px;
+  margin: 2px 4px;
+  border-radius: 6px;
   transition: background-color 0.2s;
-  gap: 12px;
+  gap: 10px;
   cursor: pointer;
 }
 
@@ -110,17 +163,19 @@ h1 {
 .tab-info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
   flex-grow: 1;
   min-width: 0;
 }
 
 .tab-title {
   font-weight: 500;
-  font-size: 13px;
+  font-size: 13.5px;
+  color: var(--text-color);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  letter-spacing: -0.01em;
 }
 
 .tab-age {
@@ -145,9 +200,33 @@ h1 {
 
 .close-btn:hover {
   background-color: #fee2e2;
-  color: var(--danger-color);
+  color: #ef4444;
+}
+
+.restore-btn:hover {
+  background-color: #dcfce7;
+  color: #22c55e;
 }
 
 .hidden {
   display: none !important;
+}
+
+.empty-state {
+  padding: 32px 20px;
+  text-align: center;
+  color: var(--label-color);
+  font-size: 13px;
+}
+
+.empty-state p {
+  margin: 0;
+}
+
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
 }

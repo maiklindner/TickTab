@@ -103,5 +103,41 @@
   },
   "popupSortTitle": {
     "message": "並び替え順序を切り替え"
+  },
+  "popupTabActive": {
+    "message": "アクティブ"
+  },
+  "popupTabHistory": {
+    "message": "履歴"
+  },
+  "popupNoHistory": {
+    "message": "履歴はまだありません。"
+  },
+  "popupRestoreTab": {
+    "message": "元に戻す"
+  },
+  "popupHistoryAgeMinutes": {
+    "message": "$mins$ 分前に終了",
+    "placeholders": {
+      "mins": { "content": "$1" }
+    }
+  },
+  "popupHistoryAgeHours": {
+    "message": "$hours$ 時間前に終了",
+    "placeholders": {
+      "hours": { "content": "$1" }
+    }
+  },
+  "popupHistoryAgeDays": {
+    "message": "$days$ 日前に終了",
+    "placeholders": {
+      "days": { "content": "$1" }
+    }
+  },
+  "optionsHistoryLimitTitle": {
+    "message": "履歴の上限"
+  },
+  "optionsHistoryLimitDesc": {
+    "message": "履歴に保持する自動終了タブの数。"
   }
 }

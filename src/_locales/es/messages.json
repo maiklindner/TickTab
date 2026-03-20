@@ -103,5 +103,41 @@
   },
   "popupSortTitle": {
     "message": "Cambiar orden de clasificación"
+  },
+  "popupTabActive": {
+    "message": "Activas"
+  },
+  "popupTabHistory": {
+    "message": "Historial"
+  },
+  "popupNoHistory": {
+    "message": "Aún no hay historial."
+  },
+  "popupRestoreTab": {
+    "message": "Restaurar"
+  },
+  "popupHistoryAgeMinutes": {
+    "message": "Cerrado hace $mins$ m",
+    "placeholders": {
+      "mins": { "content": "$1" }
+    }
+  },
+  "popupHistoryAgeHours": {
+    "message": "Cerrado hace $hours$ h",
+    "placeholders": {
+      "hours": { "content": "$1" }
+    }
+  },
+  "popupHistoryAgeDays": {
+    "message": "Cerrado hace $days$ d",
+    "placeholders": {
+      "days": { "content": "$1" }
+    }
+  },
+  "optionsHistoryLimitTitle": {
+    "message": "Límite del historial"
+  },
+  "optionsHistoryLimitDesc": {
+    "message": "Número de pestañas cerradas automáticamente para mantener en el historial."
   }
 }

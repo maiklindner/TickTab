@@ -103,5 +103,41 @@
   },
   "popupSortTitle": {
     "message": "Sortierung ändern"
+  },
+  "popupTabActive": {
+    "message": "Aktiv"
+  },
+  "popupTabHistory": {
+    "message": "Verlauf"
+  },
+  "popupNoHistory": {
+    "message": "Noch kein Verlauf vorhanden."
+  },
+  "popupRestoreTab": {
+    "message": "Wiederherstellen"
+  },
+  "popupHistoryAgeMinutes": {
+    "message": "Vor $mins$m geschlossen",
+    "placeholders": {
+      "mins": { "content": "$1" }
+    }
+  },
+  "popupHistoryAgeHours": {
+    "message": "Vor $hours$h geschlossen",
+    "placeholders": {
+      "hours": { "content": "$1" }
+    }
+  },
+  "popupHistoryAgeDays": {
+    "message": "Vor $days$d geschlossen",
+    "placeholders": {
+      "days": { "content": "$1" }
+    }
+  },
+  "optionsHistoryLimitTitle": {
+    "message": "Verlaufslimit"
+  },
+  "optionsHistoryLimitDesc": {
+    "message": "Anzahl der automatisch geschlossenen Tabs, die im Verlauf behalten werden."
   }
 }

@@ -1,6 +1,5 @@
 let currentMessages = {};
 let tabTimestamps = {};
-let sortOrder = 'asc';
 
 function getMessage(key) {
     return currentMessages[key] ? currentMessages[key].message : key;
@@ -37,13 +36,18 @@ function localizeHtmlPage() {
     document.getElementById('optionsBtn').title = getMessage('optionsTitle');
     document.getElementById('cleanTabsBtn').title = getMessage('popupCloseStale');
     document.getElementById('sortBtn').title = getMessage('popupSortTitle');
+    
+    document.getElementById('activeTabBtn').textContent = getMessage('popupTabActive');
+    document.getElementById('historyTabBtn').textContent = getMessage('popupTabHistory');
+    
     document.getElementById('noInactiveLoc').textContent = getMessage('popupNoInactive');
+    document.getElementById('noHistoryLoc').textContent = getMessage('popupNoHistory');
 }
 
-function updateSortIcon() {
+function updateSortIcon(order) {
     const ascIcon = document.getElementById('sortIconAsc');
     const descIcon = document.getElementById('sortIconDesc');
-    if (sortOrder === 'asc') {
+    if (order === 'asc') {
         ascIcon.classList.remove('hidden');
         descIcon.classList.add('hidden');
     } else {
@@ -68,10 +72,10 @@ async function renderTabs() {
     
     const tabs = await chrome.tabs.query({ pinned: false });
     const storageData = await chrome.storage.local.get(null);
-    const syncData = await chrome.storage.sync.get({ sortOrder: 'asc' });
+    const syncData = await chrome.storage.sync.get({ sortOrderActive: 'asc' });
     
-    sortOrder = syncData.sortOrder;
-    updateSortIcon();
+    const sortOrderActive = syncData.sortOrderActive;
+    updateSortIcon(sortOrderActive);
 
     // Filter storage for tab timestamps
     tabTimestamps = {};
@@ -105,7 +109,7 @@ async function renderTabs() {
             else if (!a.active && b.active) diff = -1;
         }
         
-        return sortOrder === 'asc' ? diff : -diff;
+        return sortOrderActive === 'asc' ? diff : -diff;
     });
 
     tabs.forEach(tab => {
@@ -177,28 +181,202 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
         if (hasTabChanges) {
             renderTabs();
         }
+        if (changes.closedTabsHistory) {
+            const historyView = document.getElementById('historyView');
+            if (historyView.classList.contains('active')) {
+                renderHistory();
+            }
+        }
     }
 });
 
+function switchView(view, skipAnimation = false) {
+    const activeTabBtn = document.getElementById('activeTabBtn');
+    const historyTabBtn = document.getElementById('historyTabBtn');
+    const activeView = document.getElementById('activeView');
+    const historyView = document.getElementById('historyView');
+    const navSlider = document.getElementById('navSlider');
+
+    if (skipAnimation) {
+        navSlider.style.transition = 'none';
+    }
+
+    if (view === 'active') {
+        activeTabBtn.classList.add('active');
+        historyTabBtn.classList.remove('active');
+        activeView.classList.add('active');
+        activeView.classList.remove('hidden');
+        historyView.classList.remove('active');
+        historyView.classList.add('hidden');
+        navSlider.style.transform = 'translateX(0)';
+        renderTabs();
+    } else {
+        activeTabBtn.classList.remove('active');
+        historyTabBtn.classList.add('active');
+        activeView.classList.remove('active');
+        activeView.classList.add('hidden');
+        historyView.classList.add('active');
+        historyView.classList.remove('hidden');
+        navSlider.style.transform = 'translateX(100%)';
+        renderHistory();
+    }
+    
+    if (skipAnimation) {
+        // Force reflow
+        navSlider.offsetHeight;
+        navSlider.style.transition = '';
+    }
+    
+    // Save last view
+    chrome.storage.local.set({ lastView: view });
+}
+
+async function renderHistory() {
+    try {
+        const container = document.getElementById('historyList');
+        const noHistoryMsg = document.getElementById('noHistoryMsg');
+        
+        const res = await chrome.storage.local.get(['closedTabsHistory']);
+        let history = res.closedTabsHistory || [];
+        
+        if (!Array.isArray(history)) {
+            console.error("[TickTab] history data is invalid, resetting to empty array", history);
+            history = [];
+        }
+
+        const syncData = await chrome.storage.sync.get({ sortOrderHistory: 'desc' });
+        const sortOrderHistory = syncData.sortOrderHistory;
+        updateSortIcon(sortOrderHistory);
+        
+        // Sort history by closedAt
+        history.sort((a, b) => {
+            if (sortOrderHistory === 'asc') {
+                return a.closedAt - b.closedAt; // Oldest closed first
+            } else {
+                return b.closedAt - a.closedAt; // Newest closed first
+            }
+        });
+
+        console.log("[TickTab] Rendering history. Found items:", history.length);
+
+        if (history.length === 0) {
+            container.innerHTML = '';
+            noHistoryMsg.classList.remove('hidden');
+            return;
+        }
+
+        noHistoryMsg.classList.add('hidden');
+        container.innerHTML = '';
+
+        history.forEach((item, index) => {
+            if (!item.url && !item.title) return; // Skip invalid entries
+
+            const row = document.createElement('div');
+            row.className = 'tab-item';
+            
+            const favicon = document.createElement('img');
+            favicon.className = 'tab-favicon';
+            favicon.src = item.favIconUrl || 'icons/logo16.png';
+            favicon.onerror = () => favicon.src = 'icons/logo16.png';
+            
+            const info = document.createElement('div');
+            info.className = 'tab-info';
+            
+            const title = document.createElement('div');
+            title.className = 'tab-title';
+            title.textContent = item.title || item.url || "Unknown Tab";
+            
+            const age = document.createElement('div');
+            age.className = 'tab-age';
+            
+            const diff = Date.now() - (item.closedAt || Date.now());
+            age.textContent = formatHistoryAge(diff);
+            
+            info.appendChild(title);
+            info.appendChild(age);
+            
+            const restoreBtn = document.createElement('button');
+            restoreBtn.className = 'close-btn restore-btn'; // Use greenish hover
+            restoreBtn.title = getMessage('popupRestoreTab');
+            restoreBtn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>';
+            
+            restoreBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                chrome.runtime.sendMessage({ action: 'restoreTab', url: item.url }, () => {
+                    renderHistory();
+                });
+            });
+
+            row.appendChild(favicon);
+            row.appendChild(info);
+            row.appendChild(restoreBtn);
+            
+            row.addEventListener('click', () => {
+                if (item.url) {
+                    chrome.runtime.sendMessage({ action: 'restoreTab', url: item.url });
+                    window.close();
+                }
+            });
+            
+            container.appendChild(row);
+        });
+    } catch (err) {
+        console.error("[TickTab] Fatal error in renderHistory:", err);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initLocalization(() => {
-        renderTabs();
+        chrome.storage.local.get(['lastView'], (res) => {
+            const lastView = res.lastView || 'active';
+            switchView(lastView, true); // Skip animation on initial load
+        });
     });
+
+    document.getElementById('activeTabBtn').addEventListener('click', () => switchView('active'));
+    document.getElementById('historyTabBtn').addEventListener('click', () => switchView('history'));
 
     document.getElementById('optionsBtn').addEventListener('click', () => {
         chrome.runtime.openOptionsPage();
     });
 
-    document.getElementById('sortBtn').addEventListener('click', () => {
-        sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
-        chrome.storage.sync.set({ sortOrder }, () => {
-            renderTabs();
-        });
-    });
+    document.getElementById('sortBtn').addEventListener('click', async () => {
+        const activeView = document.getElementById('activeView');
+        const isHistory = !activeView.classList.contains('active');
+        const key = isHistory ? 'sortOrderHistory' : 'sortOrderActive';
+        const defaultValue = isHistory ? 'desc' : 'asc';
 
+        const res = await chrome.storage.sync.get({ [key]: defaultValue });
+        const currentOrder = res[key];
+        const newOrder = currentOrder === 'asc' ? 'desc' : 'asc';
+        
+        await chrome.storage.sync.set({ [key]: newOrder });
+        
+        if (isHistory) {
+            renderHistory();
+        } else {
+            renderTabs();
+        }
+    });
+    
     document.getElementById('cleanTabsBtn').addEventListener('click', async () => {
         chrome.runtime.sendMessage({ action: 'nukeInactive' }, () => {
-            setTimeout(renderTabs, 500);
+            const activeView = document.getElementById('activeView');
+            if (activeView.classList.contains('active')) {
+                renderTabs();
+            } else {
+                renderHistory();
+            }
         });
     });
 });
+
+function formatHistoryAge(ms) {
+    const mins = Math.floor(ms / (1000 * 60));
+    if (mins < 1) return getMessage('popupAgeJustNow');
+    if (mins < 60) return getMessage('popupHistoryAgeMinutes').replace('$mins$', mins);
+    const hours = Math.floor(mins / 60);
+    if (hours < 24) return getMessage('popupHistoryAgeHours').replace('$hours$', hours);
+    const days = Math.floor(hours / 24);
+    return getMessage('popupHistoryAgeDays').replace('$days$', days);
+}
