@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.2] - 2026-03-20
+
+### Changed
+- **Popup Persistence**: Removed explicit `window.close()` commands when switching tabs or restoring history, allowing for sequential management.
+- **Improved Hit Areas**: Increased the interactive area for the "Close Tab" button and disabled pointer events on icons to ensure better click reliability.
+
 ## [1.5.1] - 2026-03-20
 
 ### Added

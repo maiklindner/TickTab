@@ -167,7 +167,6 @@ async function renderTabs() {
 
             chrome.tabs.update(tab.id, { active: true });
             chrome.windows.update(tab.windowId, { focused: true });
-            window.close();
         });
         
         container.appendChild(item);
@@ -316,7 +315,6 @@ async function renderHistory() {
             row.addEventListener('click', () => {
                 if (item.url) {
                     chrome.runtime.sendMessage({ action: 'restoreTab', url: item.url });
-                    window.close();
                 }
             });
             
