@@ -116,6 +116,9 @@
   "popupRestoreTab": {
     "message": "Restore"
   },
+  "popupClearHistory": {
+    "message": "Clear History"
+  },
   "popupHistoryAgeMinutes": {
     "message": "Closed $mins$m ago",
     "placeholders": {

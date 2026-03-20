@@ -116,6 +116,9 @@
   "popupRestoreTab": {
     "message": "Restaurer"
   },
+  "popupClearHistory": {
+    "message": "Effacer l'historique"
+  },
   "popupClosedSuffix": {
     "message": "auparavant"
   },

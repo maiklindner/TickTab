@@ -116,6 +116,9 @@
   "popupRestoreTab": {
     "message": "恢复"
   },
+  "popupClearHistory": {
+    "message": "清除历史记录"
+  },
   "popupHistoryAgeMinutes": {
     "message": "$mins$ 分钟前关闭",
     "placeholders": {

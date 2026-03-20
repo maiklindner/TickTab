@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.5.1] - 2026-03-20
+
+### Added
+- **Clear History**: The trash can icon now clears the history when the History tab is active.
+- **Dynamic Tooltips**: Tooltips for action buttons now update based on the current view for better clarity.
+
 ## [1.5.0] - 2026-03-20
 
 ### Added

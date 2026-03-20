@@ -116,6 +116,9 @@
   "popupRestoreTab": {
     "message": "元に戻す"
   },
+  "popupClearHistory": {
+    "message": "履歴を消去"
+  },
   "popupHistoryAgeMinutes": {
     "message": "$mins$ 分前に終了",
     "placeholders": {

@@ -253,6 +253,12 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         });
         return true;
     }
+    if (request.action === 'clearHistory') {
+        chrome.storage.local.set({ closedTabsHistory: [] }, () => {
+            sendResponse({ success: true });
+        });
+        return true;
+    }
 });
 
 // Rule evaluation and closing triggers are handled via alarms and the management popup.

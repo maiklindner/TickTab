@@ -209,6 +209,7 @@ function switchView(view, skipAnimation = false) {
         historyView.classList.remove('active');
         historyView.classList.add('hidden');
         navSlider.style.transform = 'translateX(0)';
+        document.getElementById('cleanTabsBtn').title = getMessage('popupCloseStale');
         renderTabs();
     } else {
         activeTabBtn.classList.remove('active');
@@ -218,6 +219,7 @@ function switchView(view, skipAnimation = false) {
         historyView.classList.add('active');
         historyView.classList.remove('hidden');
         navSlider.style.transform = 'translateX(100%)';
+        document.getElementById('cleanTabsBtn').title = getMessage('popupClearHistory');
         renderHistory();
     }
     
@@ -360,14 +362,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     document.getElementById('cleanTabsBtn').addEventListener('click', async () => {
-        chrome.runtime.sendMessage({ action: 'nukeInactive' }, () => {
-            const activeView = document.getElementById('activeView');
-            if (activeView.classList.contains('active')) {
-                renderTabs();
-            } else {
+        const activeView = document.getElementById('activeView');
+        const isHistory = !activeView.classList.contains('active');
+        
+        if (isHistory) {
+            chrome.runtime.sendMessage({ action: 'clearHistory' }, () => {
                 renderHistory();
-            }
-        });
+            });
+        } else {
+            chrome.runtime.sendMessage({ action: 'nukeInactive' }, () => {
+                renderTabs();
+            });
+        }
     });
 });
 
