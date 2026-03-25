@@ -35,14 +35,12 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   margin: 0;
-  padding: 20px;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
 }
 
 .container {
@@ -54,37 +52,26 @@ body {
   max-width: 800px;
   border: 1px solid var(--border-color);
   box-sizing: border-box;
-}
-
-footer {
-  margin-top: 24px;
-  text-align: center;
-  color: var(--label-color);
-  font-size: 13px;
-  opacity: 0.5;
-}
-
-footer p {
-  margin: 0;
+  margin: 2em;
 }
 
 header {
   margin-bottom: 24px;
   border-bottom: 1px solid var(--border-color);
-  padding-bottom: 1rem;
+  padding-bottom: 16px;
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 24px;
   color: var(--text-color);
   font-weight: 700;
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
   letter-spacing: -0.025em;
 }
 
 h2 {
-  font-size: 1.25rem;
+  font-size: 20px;
   color: var(--text-color);
   font-weight: 600;
   margin: 0;
@@ -103,9 +90,9 @@ p#optionsDescription {
 
 label {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.9em;
   color: var(--label-color);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.6em;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
@@ -113,12 +100,12 @@ label {
 select,
 input[type="number"] {
   width: 100%;
-  padding: 0.875rem 1rem;
+  padding: 14px 16px;
   border: 1px solid var(--border-color);
   border-radius: 10px;
   background-color: var(--input-bg-color);
   color: var(--text-color);
-  font-size: 1rem;
+  font-size: 1em;
   box-sizing: border-box;
   transition: all 0.2s ease;
   font-family: inherit;
@@ -140,9 +127,9 @@ input[type="number"]:focus {
 
 button {
   width: 100%;
-  padding: 0.875rem;
-  margin-top: 1.5rem;
-  font-size: 1rem;
+  padding: 14px;
+  margin-top: 1.5em;
+  font-size: 1em;
   font-weight: 600;
   color: #ffffff;
   background-color: var(--primary-color);

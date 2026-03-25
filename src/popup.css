@@ -80,7 +80,7 @@ body {
   height: 100%;
   cursor: pointer;
   font-family: inherit;
-  font-size: 0.78125rem;
+  font-size: 12.5px;
   font-weight: 500;
   color: var(--label-color);
   transition: color 0.2s;
@@ -96,10 +96,9 @@ body {
 }
 
 h1 {
-  font-size: 1.125rem;
+  font-size: 1.1em;
   margin: 0;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 600;
 }
 
 .header-actions {
@@ -175,7 +174,7 @@ h1 {
 
 .tab-title {
   font-weight: 500;
-  font-size: 0.84375rem;
+  font-size: 13.5px;
   color: var(--text-color);
   white-space: nowrap;
   overflow: hidden;
@@ -184,7 +183,7 @@ h1 {
 }
 
 .tab-age {
-  font-size: 0.6875rem;
+  font-size: 11px;
   color: var(--label-color);
 }
 
@@ -222,10 +221,10 @@ h1 {
 }
 
 .empty-state {
-  padding: 2rem 1.25rem;
+  padding: 32px 20px;
   text-align: center;
   color: var(--label-color);
-  font-size: 0.8125rem;
+  font-size: 13px;
 }
 
 .empty-state p {
